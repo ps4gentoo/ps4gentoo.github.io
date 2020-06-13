@@ -1,0 +1,15 @@
+[    0.000000] Command line: panic=0 clocksource=tsc amdgpu.dc=0 amdgpu.dpm=0 drm.debug=0
+[    0.249710] Kernel command line: panic=0 clocksource=tsc amdgpu.dc=0 amdgpu.dpm=0 drm.debug=0
+[    0.469949] amd_uncore: AMD NB counters detected
+[    0.469964] amd_uncore: AMD LLC counters detected
+[    0.507922] [drm] amdgpu kernel modesetting enabled.
+[    0.508188] amdgpu 0000:00:01.0: vgaarb: deactivate vga console
+[    0.610497] amdgpu 0000:00:01.0: vgaarb: deactivate vga console
+[    0.610528] amdgpu 0000:00:01.0: can't find IRQ for PCI INT A; please try using pci=biosirq
+[    1.157921] amdgpu 0000:00:01.0: VRAM: 2048M 0x0000000F00000000 - 0x0000000F7FFFFFFF (2048M used)
+[    1.157929] amdgpu 0000:00:01.0: GART: 512M 0x0000000000000000 - 0x000000001FFFFFFF
+[    1.158105] [drm] amdgpu: 2048M of VRAM memory ready
+[    1.158115] [drm] amdgpu: 3072M of GTT memory ready.
+[    1.196933] fbcon: amdgpudrmfb (fb0) is primary device
+[    1.407419] amdgpu 0000:00:01.0: fb0: amdgpudrmfb frame buffer device
+[    1.407586] [drm] Initialized amdgpu 3.33.0 20150101 for 0000:00:01.0 on minor 1

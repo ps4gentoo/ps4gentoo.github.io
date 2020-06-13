@@ -1,0 +1,120 @@
+<html manifest="offline.cache">
+<head>
+<title></title>
+<link rel="stylesheet prefetch" href="files/style2.css">
+</head>
+<body>
+<div id=ScrOverlay class=cacheUPDbg><pre id=cacheUPDtxt class=cacheUPD></pre><div id=CacheProgress><div id=CacheBar></div></div></div>
+<input autofocus="autofocus" type="range" id="NOUP" style="opacity:0;display:none;">
+<div id=SubTabA class=SubTabTxtAnim></div><div id=SubTabB class=SubTabLineAnim></div>
+<div id=Title class=Title>Gentoo</div>
+<div id=Popup onclick="Popup.classList.remove('animation');"><div id="PopIcon"></div><div id="PopTitle"></div></div>
+<div id=BottomPopup></div>
+<div id=InfoButton><div id=R1BUTTON></div>= Show Payload Info</div>
+
+
+
+<div id=MenuContainer class=MenuContainer onclick=GetInfo()>
+<div id=MainMenu class=MenuPos>
+<div  PL-Title="Extras"         PL-Bin="SUBMENU 1"         PL-Ver=""             PL-Desc="Extras" class="Box Icon2">&#xf49c;</div
+><div PL-Title="Bin Loader"       PL-Bin="BINLOADER"  PL-Ver="v1.0 - By Specter"  PL-Desc="Loads a bin file sent to the PS4 IP address on port 9020.<br><br>This version of Bin Loader can also load extra large bin files up to 12.58MB in size." class="Box Icon">&#xf019;</div
+><div PL-Title="Gentoo 2GB" 	    PL-Bin="Linuxgentoo.bin"   PL-Ver="kernel 5.3.18" PL-Desc="Linux Gentoo with Gentoo-Sources Kernel.<br><br>vram: 2GB<br><br>Autoboot: Label=gentoo" class="Box Icon"><extra>Gentoo 2GB</extra><img src="files/img/linux.svg"></div
+><div PL-Title="Gentoo 3GB" 	PL-Bin="Linuxgentoo3g.bin" PL-Ver="kernel 5.3.7" PL-Desc="Linux Gentoo with Gentoo-Sources Kernel.<br><br>vram: 3GB<br><br> Autoboot: Label=gentoo" class="Box Icon"><extra>Gentoo 3GB</extra><img src="files/img/linux.svg"></div
+><div PL-Title="Linux Internal" PL-Bin="Linuxinternal3G.bin" PL-Ver="no Kernel"    PL-Desc="A Linux Loader to run Linux from the PS4 internal HDD.<br><br>bzimage+initramfs >>>/data/linux/boot <br><br> Distro >>>/data/linux/" class="Box Icon"><extra>Internal</extra>&#xf233;</div
+><div PL-Title="Linux USB"      PL-Bin="Linuxusb.bin"      PL-Ver="By eeply"     PL-Desc="A Linux Loader to run Rescue/Shell from the USB Stick<br><br> for psxitarch psxita.it" class="Box Icon"><extra>USB</extra>&#xf0a0;</div
+></div></div>
+
+<div id=SubMenu1Container class=SubMenuContainer style=display:none onclick=GetInfo()>
+<div id=SubMenu1 class=SubMenuPos>
+<div  PL-Title="FTP"              PL-Bin="FTP.bin"     PL-Ver="v1.3.2 - By LightningMods"  PL-Desc="A full access FTP server for the PS4. Connect your FTP client to the IP address that the popup message tells you. The FTP port number is 1337." class="Box Icon"><img src="files/img/ftp.svg"></div
+><div PL-Title="Hen"              PL-Bin="Hen213.bin" PL-Ver="v2.1.3 - By SiSTRo" PL-Desc="Enable Homebrew, Enable Debug Settings, Enable External HDD Support, <br>PSVR Support via Firmware Spoof to v7.02, Remote PKG Installer Support, <br>Full Rest Mode Support, 7.xx External HDD Support, Debug Trophies Support."  class="Box Icon"><img src="files/img/hen.svg"></div
+><div PL-Title="Mira"            PL-Bin="Mira.bin"    PL-Ver="v1.0 - By OpenOrbis"        PL-Desc="Enable Mira framework.<br>Kernel Logging Server Port: 9998<br>RPC Server Port: 9999" class="Box Icon">&#xf850;</div
+><div PL-Title="PS4Ren"            PL-Bin="PS4ren.bin"   PL-Ver="v1.0 - By SiSTRo"       PL-Desc="PS4 Remote Play Enabler.<br><br>Use this to allow you to register a device for remote play.<br>NOTE: The PS button is disabled during use so use the Circle button to return to the home menu." class="Box Icon2">&#xf11b;</div
+><div PL-Title="Disable Updates" PL-Bin="UpdatesDisable.bin" PL-Ver="v1.0 - By Al Azif"                PL-Desc="Creates dummy files in the PS4 update folder to prevent the download of unwanted system updates.<br>It also deletes any existing updates if they already exist.<br><br>! You only ever have to run this once !" class="Box Icon">&#xf771;</div
+><div PL-Title="Fan Control"      PL-Bin=""           PL-Ver="v4.0 - By Leeful"   PL-Desc="Set the desired temperature that the PS4 fan starts.<br>You can move the slider by using the D-Pad Up & Down or Left & Right.<br>The value you set will remain until the power is removed from the PS4.<br><br>The default PS4 setting is 79&#176;" class="Box Icon"><img src="files/img/FanControl.svg"></div
+><div PL-Title="Info"           PL-Bin="INFO"              PL-Ver=""             PL-Desc="Linux Info & Credits." class="Box Icon2">&#xf30f;</div
+></div></div>
+<div id=navFix1 tabindex="1"></div><div id=navFix2 tabindex="2"></div><div id=navFix3 tabindex="3"></div>
+<div id=Loader class=Loader></div>
+<div id=InfoBox style=display:none><div id=InfoTitle></div><div id=InfoVerAuth></div><div id=InfoDesc></div></div>
+<div id=Clock class=Info1></div>
+<div id=Ktime class=Info2></div>
+<div id=OffFW class=Info1></div>
+<div id=SpoFW class=Info2></div>
+<div id=FanTemp class=Info1></div>
+<script>
+var SS=sessionStorage;var LS=localStorage;var CC=createCookie;var RC=readCookie;function createCookie(name,value,days){if(days){var date=new Date();date.setTime(date.getTime()+(days*24*60*60*1000));var expires="; expires="+date.toGMTString();}else
+expires="";document.cookie=name+"="+value+expires;}
+function readCookie(name){var nameEQ=name+"=";var ca=document.cookie.split(';');for(var i=0;i<ca.length;i++){var c=ca[i];while(c.charAt(0)==' ')
+c=c.substring(1,c.length);if(c.indexOf(nameEQ)==0)
+return c.substring(nameEQ.length,c.length);}
+return null;}
+function DLProgress(e){ScrOverlay.style.display="block";Percent=(Math.round(e.loaded/e.total*100));cacheUPDtxt.innerHTML="Installing Offline Cache: "+Percent+"%";CacheBar.style.width=Percent+'%';}
+function DisplayCacheProgress(){setTimeout(function(){cacheUPDtxt.innerHTML="Cache Installed Successfully";},1000);setTimeout(function(){ScrOverlay.style.opacity="0";},2500);setTimeout(function(){ScrOverlay.style.display="none";},3500);}
+window.applicationCache.addEventListener("progress",DLProgress,false);window.applicationCache.oncached=function(e){DisplayCacheProgress();};window.applicationCache.onupdateready=function(e){DisplayCacheProgress();};window.applicationCache.onerror=function(e){window.cacheUPDtxt.innerHTML="Error Installing Cache";};if(LS.KernEpochDiff==null){LS.KernEpochDiff=0;}
+if(LS.CurrentTemp==null){LS.CurrentTemp=79;}
+if(RC('KernEpochDiff')==null){CC('KernEpochDiff',LS.KernEpochDiff,365);}
+if(RC('CurrentTemp')==null){CC('CurrentTemp',LS.CurrentTemp,365);}
+window.onunload=function(e){CC("CurrentTemp",LS.CurrentTemp,365);CC("KernEpochDiff",LS.KernEpochDiff,365);};var UA=navigator.userAgent.substring(navigator.userAgent.indexOf("5.0 (")+19,navigator.userAgent.indexOf(") Apple"));if(LS.TrueFW==null){if(UA=="5.05"||UA=="5.07"){LS.TrueFW=(Number(UA));}else{LS.TrueFW="Spoofed";}}
+function ShowFirmwareVer(){OffFW.style.display='block';SpoFW.style.display='block';if(LS.TrueFW==null){if(UA=="5.05"||UA=="5.07"){LS.TrueFW=(Number(UA));OfficialFW=LS.TrueFW;}else{LS.TrueFW="Spoofed";OfficialFW=LS.TrueFW;}}else{OfficialFW=LS.TrueFW;}
+ReportedFW=UA;OfficialFW=LS.TrueFW;if(OfficialFW==ReportedFW){OffFW.innerHTML=("Official Firmware v"+OfficialFW+" detected");}else{OfficialFW=LS.TrueFW;OffFW.innerHTML=("Official Firmware: v"+OfficialFW);SpoFW.innerHTML=("Currently Spoofed To: v"+ReportedFW);}
+if(isNaN(ReportedFW)){OffFW.innerHTML=("NO PS4 DETECTED");}
+if(OfficialFW=="Spoofed"&&!isNaN(UA)){OffFW.innerHTML=("Incorrect Firmware Version Detected!");SpoFW.innerHTML="Please Reboot your Console!";alert("Incorrect firmware value identified!\n\nIt appears that you have deleted the cache after using a firmware spoof.\n\nTo set the correct firmware version and remove this message please reboot the console.");localStorage.removeItem("TrueFW");}}
+function HideFirmwareVer(){OffFW.style.display='none';SpoFW.style.display='none';}
+function ShowTimeAndDate(){var Kdate=new Date();Kdate.setTime(Kdate.getTime()+ -LS.KernEpochDiff);Clock.style.display='block';Ktime.style.display='block';Clock.innerHTML='Current System Clock: '+Date().toString().slice(4,21);Ktime.innerHTML='Current Kernel Clock: '+Kdate.toString().slice(4,21);}
+function HideTimeAndDate(){Clock.style.display='none';Ktime.style.display='none';}
+function ShowFanTemp(){FanTemp.style.display='block';FanTemp.innerHTML='Current Fan Control Threshold Setting: <font color="yellow">'+RC('CurrentTemp')+'&#176;</font>';}
+function HideFanTemp(){FanTemp.style.display='none';}
+var MMc=MainMenu.childElementCount;var MMtotal=MMc;var SM1t='Extras';var SM1n=1;var SM1c=SubMenu1.childElementCount;var SM1total=MMc+SM1c;function GenerateSubMenuChildernCount(){SM1z=parseInt(SS.ItemNum-1-MMc);}
+if(sessionStorage.length!=0&&SS.LastPage==null){if(SS.MainMenu==1){window.MainMenu.children[SS.ItemNum-1].className="SelectedItem Icon";window.MainMenu.style.left=SS.ItemPos+'px';ChangeText(window.MainMenu.children[SS.ItemNum-1].getAttribute('PL-Title'));}else if(SS.SubMenu==1){SS.MainMenu=0;SS.ItemNum=SS.LastSubMenu1ItemNum;FocusSubMenu1();UpdateMenu();}}
+if(sessionStorage.length!=0&&SS.LastPage!=null){InfoBox.style.display='block';Title.style.display='none';IBT=ChangeInfoBoxTitle;IBV=ChangeInfoBoxVer;IBD=ChangeInfoBoxDesc;if(SS.MainMenu==1){MainMenu.children[SS.ItemNum-1].opacity="1";MainMenu.children[SS.ItemNum-1].className="SelectedItem Icon";MainMenu.style.left=SS.ItemPos+'px';IBT(MainMenu.children[SS.ItemNum-1].getAttribute('PL-Title'));IBV(MainMenu.children[SS.ItemNum-1].getAttribute('PL-Ver'));IBD(MainMenu.children[SS.ItemNum-1].getAttribute('PL-Desc'));}else if(SS.SubMenu==1){SS.MainMenu=0;SS.ItemNum=SS.LastSubMenu1ItemNum;FocusSubMenu1();UpdateMenu();SubMenu1.children[SM1z].opacity="1";SubMenu1.children[SM1z].className="SelectedItem Icon";SubTabA.style.display='none';SubTabB.style.display='none';IBT(SubMenu1.children[SM1z].getAttribute('PL-Title'));IBV(SubMenu1.children[SM1z].getAttribute('PL-Ver'));IBD(SubMenu1.children[SM1z].getAttribute('PL-Desc'));}
+var x=document.querySelectorAll(".box");var i;for(i=0;i<x.length;i++){x[i].style.opacity="0";}
+window.Loader.innerHTML='<object type="text/html" data="'+SS.LastPage+'" style="width:265px; height:56px;"></object>';}
+if(sessionStorage.length==0){SS.MainMenu=1;SS.SubMenu=0;SS.ItemNum=3;SS.ItemPos=-65;SS.SubMenu1ItemPos=325;SS.LastSubMenu1ItemNum=MMc+1;window.MainMenu.children[SS.ItemNum-1].className="SelectedItem Icon";}
+function UpdateMenu(){GenerateSubMenuChildernCount();if(SS.NoUpURL==null){NOUP.style.display='block';SS.NoUpURL='1';}
+SubMenu1Container.style.display='none';if(SS.ItemNum==SM1n||SS.SubMenu==1){SubMenu1Container.style.display='block';}
+setTimeout(function(){if(SS.MainMenu==1){if(MainMenu.children[SS.ItemNum-1].getAttribute('PL-Bin').includes('SUBMENU')){MainMenu.children[SS.ItemNum-1].className="SelectedItem Icon2";}else{MainMenu.children[SS.ItemNum-1].className="SelectedItem Icon";}}else if(SS.SubMenu==1){SubMenu1.children[SM1z].className="SelectedItem Icon";}},0);if(SS.MainMenu==1){MainMenu.children[SS.ItemNum-1].className="SelectedItemAnim Icon";MainMenu.style.left=SS.ItemPos+'px';SS.LastMenuItemPos=SS.ItemPos;SS.LastMenuItemNum=SS.ItemNum;}else if(SS.SubMenu==1){SubMenu1.style.left=SS.SubMenu1ItemPos+'px';SS.LastSubMenu1ItemPos=SS.SubMenu1ItemPos;SS.LastSubMenu1ItemNum=SS.ItemNum;SubMenu1.children[SM1z].className="SelectedItemAnim Icon";}
+UpdateTitle();if(SS.MainMenu==1){var x=MainMenu.childElementCount;for(i=0;i<x;i++){MainMenu.children[i].className="Box Icon";}}else if(SS.SubMenu==1){var x=SubMenu1.childElementCount;for(i=0;i<x;i++){SubMenu1.children[i].className="Box Icon";}}}
+function UpdateTitle(){Title.className="TitleAnim";setTimeout(function(){if(SS.MainMenu==1){ChangeText(MainMenu.children[SS.ItemNum-1].getAttribute('PL-Title'));}else if(SS.SubMenu==1){ChangeText(SubMenu1.children[SM1z].getAttribute('PL-Title'));}},100);setTimeout(function(){Title.className="Title";},100);}
+function FocusSubMenu1(){MenuContainer.className="HideMenuContainer";SubMenu1Container.className="MoveSubMenuContainer";SubMenu1.style.left=SS.LastSubMenu1ItemPos;SubTabA.className="SubTabTxt";SubTabB.className="SubTabLine";SubTabA.innerHTML=SM1t;}
+function UpdateSubMenu(){setTimeout(function(){GenerateSubMenuChildernCount();if(SS.SubMenu==1){SubMenu1.children[SM1z].className="SelectedItem2 Icon";}
+UpdateTitle();},0);}
+function UNFocusSubMenu(){if(SS.SubMenu==1){SubMenu1.children[SM1z].className="Box2 Icon";SubMenu1Container.className="SubMenuContainer";SS.ItemNum=SM1n;}
+MenuContainer.className="MenuContainer2";SubTabA.className="SubTabTxtAnim";SubTabB.className="SubTabLineAnim";SS.SubMenu=0;if(SS.MainMenu==1){ChangeText(MainMenu.children[SS.ItemNum-1].getAttribute('PL-Title'));}else if(SS.SubMenu==1){ChangeText(SubMenu1.children[SM1z].getAttribute('PL-Title'));}}
+function LoadPayload(){Loader.innerHTML='<object type="text/html" data="files/exploit.html" style="width:263px; height:56px;"></object>';}
+function loadPage(){SS.LastPage='files/exploit.html';if(Title.innerHTML=='Hen'){SS.ThisIsHen='1';SS.Payload=SubMenu1.children[SM1z].getAttribute('PL-Bin');LoadPayload();}else if(Title.innerHTML=='Patch PS4 Kernel'){SS.ThisIsKernelPatch='1';LoadPayload();}else if(Title.innerHTML=='Bin Loader'){SS.ThisIsBinLoader='1';LoadPayload();}else if(Title.innerHTML=='Mira'){SS.ThisIsMira='1';SS.Payload='Mira.bin';LoadPayload();}else if(Title.innerHTML=='Fan Control'){SS.ThisIsFanControl='1';SS.LastPage='files/FanControlLoader.html';Loader.innerHTML='<object type="text/html" data="files/FanControlLoader.html" style="width:265px; height:56px;"></object>';}else if(Title.innerHTML=='Info'){SS.ThisIsInfo='1';SS.LastPage='files/Info.html';ScrOverlay.style.opacity="1";ScrOverlay.style.display="block";ScrOverlay.innerHTML='<object type="text/html" data="files/Info.html" style="width:100%; height:100%;"></object>';}
+else if(SS.MainMenu==1&&MainMenu.children[SS.ItemNum-1].getAttribute('PL-Bin').includes('SUBMENU')){}
+else if(SS.MainMenu==1){SS.Payload=MainMenu.children[SS.ItemNum-1].getAttribute('PL-Bin');LoadPayload();}
+else if(SS.SubMenu==1){SS.Payload=SubMenu1.children[SM1z].getAttribute('PL-Bin');LoadPayload();}}
+function loadPage2(){if(SS.ThisIsFanControl=='2'){window.setTEMP();}}
+function ChangeText(text){Title.innerHTML=text;}
+function ChangeInfoBoxTitle(text){InfoTitle.innerHTML=text;}
+function ChangeInfoBoxVer(text){InfoVerAuth.innerHTML=text;}
+function ChangeInfoBoxDesc(text){InfoDesc.innerHTML=text;}
+IBT=ChangeInfoBoxTitle;IBV=ChangeInfoBoxVer;IBD=ChangeInfoBoxDesc;function pop(){Popup.classList.remove('animation');void Popup.offsetWidth;Popup.classList.add('animation');}
+function BottomPop(){BottomPopup.classList.add('animation');}
+function GetInfo(){if(SS.MainMenu==1&&MainMenu.children[SS.ItemNum-1].getAttribute('PL-Bin').includes('SUBMENU')){}
+else if(SS.Loaded==null){SS.InfoBox=1;var x=document.querySelectorAll(".box");var i;for(i=0;i<x.length;i++){x[i].style.opacity="0";}
+InfoBox.style.display='block';Title.style.display='none';if(SS.MainMenu==1&&MainMenu.children[SS.ItemNum-1].getAttribute('PL-Bin').includes('SUBMENU')){IBT(MainMenu.children[SS.ItemNum-1].getAttribute('PL-Title'));IBV(MainMenu.children[SS.ItemNum-1].getAttribute('PL-Ver'));IBD(MainMenu.children[SS.ItemNum-1].getAttribute('PL-Desc'));}else if(SS.MainMenu==1){IBT(MainMenu.children[SS.ItemNum-1].getAttribute('PL-Title'));IBV(MainMenu.children[SS.ItemNum-1].getAttribute('PL-Ver'));IBD(MainMenu.children[SS.ItemNum-1].getAttribute('PL-Desc'));}else if(SS.SubMenu==1){SubTabA.style.display='none';SubTabB.style.display='none';IBT(SubMenu1.children[SM1z].getAttribute('PL-Title'));IBV(SubMenu1.children[SM1z].getAttribute('PL-Ver'));IBD(SubMenu1.children[SM1z].getAttribute('PL-Desc'));}
+loadPage();}else{loadPage2();}}
+function ShowInfo(){SS.InfoBox=1;if(Title.innerHTML.includes('ReactPSPlus')){ShowTimeAndDate();}
+if(Title.innerHTML=='Firmware Spoofer'){ShowFirmwareVer();}
+if(Title.innerHTML=='Fan Control'){ShowFanTemp();}
+var x=document.querySelectorAll(".box");var i;for(i=0;i<x.length;i++){x[i].style.opacity="0";}
+InfoBox.style.display='block';Title.style.display='none';if(SS.MainMenu==1&&MainMenu.children[SS.ItemNum-1].getAttribute('PL-Bin').includes('SUBMENU')){MainMenu.children[SS.ItemNum-1].className="InfoIcon icon2";IBT(MainMenu.children[SS.ItemNum-1].getAttribute('PL-Title'));IBV(MainMenu.children[SS.ItemNum-1].getAttribute('PL-Ver'));IBD(MainMenu.children[SS.ItemNum-1].getAttribute('PL-Desc'));}else if(SS.MainMenu==1){MainMenu.children[SS.ItemNum-1].className="InfoIcon icon";IBT(MainMenu.children[SS.ItemNum-1].getAttribute('PL-Title'));IBV(MainMenu.children[SS.ItemNum-1].getAttribute('PL-Ver'));IBD(MainMenu.children[SS.ItemNum-1].getAttribute('PL-Desc'));}else if(SS.SubMenu==1){SubTabA.style.display='none';SubTabB.style.display='none';SubMenu1.children[SM1z].className="InfoIcon icon";IBT(SubMenu1.children[SM1z].getAttribute('PL-Title'));IBV(SubMenu1.children[SM1z].getAttribute('PL-Ver'));IBD(SubMenu1.children[SM1z].getAttribute('PL-Desc'));}}
+function HideInfo(){SS.InfoBox=0;if(Title.innerHTML=='Fan Control'){HideFanTemp();}
+var x=document.querySelectorAll(".box");var i;for(i=0;i<x.length;i++){x[i].style.opacity="1";}
+InfoBox.style.display='none';Title.style.display='block';if(SS.MainMenu==1&&MainMenu.children[SS.ItemNum-1].getAttribute('PL-Bin').includes('SUBMENU')){MainMenu.children[SS.ItemNum-1].className="SelectedItem icon2";}else if(SS.MainMenu==1){MainMenu.children[SS.ItemNum-1].className="SelectedItem icon";}else if(SS.SubMenu==1){SubMenu1.children[SM1z].className="SelectedItem icon";SubTabA.style.display='block';SubTabB.style.display='block';}}
+function HideLoaderBox(){SS.Loaded='1';setTimeout(function(){var x=document.querySelectorAll(".SelectedItem");var i;for(i=0;i<x.length;i++){x[i].className="InfoIcon Icon";}},1500);}
+LS.CurrentTemp=RC('CurrentTemp');LS.KernEpochDiff=RC('KernEpochDiff');var _0x700c=["\x64\x69\x76","\x63\x72\x65\x61\x74\x65\x45\x6C\x65\x6D\x65\x6E\x74","\x69\x64","\x69\x6E\x66","\x73\x65\x74\x41\x74\x74\x72\x69\x62\x75\x74\x65","\x32\x30\x31\x39\x20\x2D\x20\x4C\x65\x65\x66\x75\x6C","\x63\x72\x65\x61\x74\x65\x54\x65\x78\x74\x4E\x6F\x64\x65","\x61\x70\x70\x65\x6E\x64\x43\x68\x69\x6C\x64","\x73\x74\x79\x6C\x65","\x74\x65\x78\x74\x2D\x61\x6C\x69\x67\x6E\x3A\x63\x65\x6E\x74\x65\x72\x3B\x6F\x70\x61\x63\x69\x74\x79\x3A\x30\x3B\x7A\x2D\x69\x6E\x64\x65\x78\x3A\x39\x39\x39\x39\x39\x39\x39\x39\x39\x39\x3B","\x6C\x61\x73\x74\x43\x68\x69\x6C\x64","\x62\x6F\x64\x79","\x69\x6E\x73\x65\x72\x74\x42\x65\x66\x6F\x72\x65"];var s=document[_0x700c[1]](_0x700c[0]);s[_0x700c[4]](_0x700c[2],_0x700c[3]);s[_0x700c[7]](document[_0x700c[6]](_0x700c[5]));s[_0x700c[4]](_0x700c[8],_0x700c[9]);document[_0x700c[11]][_0x700c[12]](s,document[_0x700c[11]][_0x700c[10]]);window.onkeyup=checkKeyUp;function checkKeyUp(e){e=e||window.event;if(e.keyCode=='116'){inf.style.opacity='0';}else if(e.keyCode=='117'&&SS.Loaded==null){HideInfo();}}
+window.onkeydown=checkKeyDown;function checkKeyDown(e){e=e||window.event;var MoveMenu=164;if(e.keyCode=='27'||e.keyCode=='116'&&SS.ThisIsInfo==1){SS.InfoBox=0;SS.removeItem('LastPage');SS.ThisIsInfo=0;window.location.reload();}else if(e.keyCode=='116'&&SS.InfoBox==1){inf.style.opacity='1';}else if(e.keyCode=='117'&&SS.Loaded==null){ShowInfo();}
+else if(SS.ThisIsFanControl!=null||SS.ThisIsFwSpoofer!=null||SS.ThisIsReactMOD!=null){}
+else if(e.keyCode=='38'&&SS.InfoBox!=1&&SS.MainMenu==0){SS.MainMenu=1;UNFocusSubMenu();}
+else if(e.keyCode=='37'&&SS.InfoBox!=1&&SS.MainMenu==1&&SS.ItemNum-1>=1&&SS.ItemNum<=MMtotal){SS.ItemPos=parseInt(SS.ItemPos)+MoveMenu;SS.ItemNum=parseInt(SS.ItemNum)-1;UpdateMenu();}
+else if(e.keyCode=='39'&&SS.InfoBox!=1&&SS.MainMenu==1&&SS.ItemNum-1>=0&&SS.ItemNum<MMtotal){SS.ItemPos=parseInt(SS.ItemPos)-MoveMenu;SS.ItemNum=parseInt(SS.ItemNum)+1;UpdateMenu();}
+else if(e.keyCode=='40'&&SS.InfoBox!=1&&SS.ItemNum==SM1n){SS.SubMenu=1;SS.MainMenu=0;SS.ItemNum=SS.LastSubMenu1ItemNum;FocusSubMenu1();UpdateSubMenu();}
+else if(e.keyCode=='37'&&SS.InfoBox!=1&&SS.SubMenu==1&&SS.ItemNum-1>MMtotal&&SS.ItemNum<=SM1total){SS.SubMenu1ItemPos=parseInt(SS.SubMenu1ItemPos)+MoveMenu;SS.ItemNum=parseInt(SS.ItemNum)-1;UpdateMenu();}
+else if(e.keyCode=='39'&&SS.InfoBox!=1&&SS.SubMenu==1&&SS.ItemNum-1>=MMtotal&&SS.ItemNum<SM1total){SS.SubMenu1ItemPos=parseInt(SS.SubMenu1ItemPos)-MoveMenu;SS.ItemNum=parseInt(SS.ItemNum)+1;UpdateMenu();}}
+</script>
+</body>
+</html>

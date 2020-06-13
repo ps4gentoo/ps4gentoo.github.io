@@ -1,0 +1,19 @@
+<html>
+<head>
+<title>Payload Loader FW 5.05</title>
+<link rel="stylesheet prefetch" href="exploit2.css">
+</head>
+<body>
+<div id=loader><div class=Loader></div></div>
+<div id=done style=display:block><div class=Loader><div class=DoneAni></div></div></div>
+<div id=fail style=display:none class=txt>Exploit<br>Failed !</div>
+<script>
+parent.ShowFanTemp();
+function LoadPayloadPage(){
+parent.HideLoaderBox();
+parent.window.BottomPopup.innerHTML='<object type="text/html" data="files/FanControl.html" style="width:99%; height:200px;"></object>';
+}
+setTimeout(function(){LoadPayloadPage();},1000);
+</script>
+</body>
+</html>

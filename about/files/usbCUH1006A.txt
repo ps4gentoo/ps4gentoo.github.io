@@ -1,0 +1,93 @@
+[    0.364226] usbcore: registered new interface driver usbfs
+[    0.364247] usbcore: registered new interface driver hub
+[    0.364308] usbcore: registered new device driver usb
+[    0.601753] usb usb1: New USB device found, idVendor=1d6b, idProduct=0002, bcdDevice= 5.03
+[    0.601762] usb usb1: New USB device strings: Mfr=3, Product=2, SerialNumber=1
+[    0.601769] usb usb1: Product: xHCI Host Controller
+[    0.601775] usb usb1: Manufacturer: Linux 5.3.7-gentoo-g44fe77e51-dirty xhci-hcd
+[    0.601782] usb usb1: SerialNumber: 0000:00:14.7
+[    0.602112] usb usb2: We don't know the algorithms for LPM for this host, disabling LPM.
+[    0.602163] usb usb2: New USB device found, idVendor=1d6b, idProduct=0003, bcdDevice= 5.03
+[    0.602172] usb usb2: New USB device strings: Mfr=3, Product=2, SerialNumber=1
+[    0.602179] usb usb2: Product: xHCI Host Controller
+[    0.602185] usb usb2: Manufacturer: Linux 5.3.7-gentoo-g44fe77e51-dirty xhci-hcd
+[    0.602192] usb usb2: SerialNumber: 0000:00:14.7
+[    0.602699] usb usb3: New USB device found, idVendor=1d6b, idProduct=0002, bcdDevice= 5.03
+[    0.602708] usb usb3: New USB device strings: Mfr=3, Product=2, SerialNumber=1
+[    0.602715] usb usb3: Product: xHCI Host Controller
+[    0.602721] usb usb3: Manufacturer: Linux 5.3.7-gentoo-g44fe77e51-dirty xhci-hcd
+[    0.602727] usb usb3: SerialNumber: 0000:00:14.7
+[    0.603031] usb usb4: We don't know the algorithms for LPM for this host, disabling LPM.
+[    0.603078] usb usb4: New USB device found, idVendor=1d6b, idProduct=0003, bcdDevice= 5.03
+[    0.603086] usb usb4: New USB device strings: Mfr=3, Product=2, SerialNumber=1
+[    0.603093] usb usb4: Product: xHCI Host Controller
+[    0.603099] usb usb4: Manufacturer: Linux 5.3.7-gentoo-g44fe77e51-dirty xhci-hcd
+[    0.603106] usb usb4: SerialNumber: 0000:00:14.7
+[    0.603599] usb usb5: New USB device found, idVendor=1d6b, idProduct=0002, bcdDevice= 5.03
+[    0.603607] usb usb5: New USB device strings: Mfr=3, Product=2, SerialNumber=1
+[    0.603614] usb usb5: Product: xHCI Host Controller
+[    0.603620] usb usb5: Manufacturer: Linux 5.3.7-gentoo-g44fe77e51-dirty xhci-hcd
+[    0.603627] usb usb5: SerialNumber: 0000:00:14.7
+[    0.603901] usb usb6: We don't know the algorithms for LPM for this host, disabling LPM.
+[    0.603947] usb usb6: New USB device found, idVendor=1d6b, idProduct=0003, bcdDevice= 5.03
+[    0.603955] usb usb6: New USB device strings: Mfr=3, Product=2, SerialNumber=1
+[    0.603962] usb usb6: Product: xHCI Host Controller
+[    0.603968] usb usb6: Manufacturer: Linux 5.3.7-gentoo-g44fe77e51-dirty xhci-hcd
+[    0.603975] usb usb6: SerialNumber: 0000:00:14.7
+[    0.604255] usbcore: registered new interface driver uas
+[    0.604314] usbcore: registered new interface driver usb-storage
+[    0.604547] usbcore: registered new interface driver xpad
+[    0.605509] usbcore: registered new interface driver usbhid
+[    0.605515] usbhid: USB HID core driver
+[    0.921408] usb 1-1: new high-speed USB device number 2 using xhci_aeolia
+[    1.038398] usb 4-1: Device not responding to setup address.
+[    1.062451] usb 1-1: New USB device found, idVendor=05e3, idProduct=0610, bcdDevice=46.12
+[    1.062461] usb 1-1: New USB device strings: Mfr=1, Product=2, SerialNumber=0
+[    1.062468] usb 1-1: Product: USB2.0 Hub
+[    1.062473] usb 1-1: Manufacturer: GenesysLogic
+[    1.178228] usb 2-1: new SuperSpeed Gen 1 USB device number 2 using xhci_aeolia
+[    1.194168] usb 2-1: New USB device found, idVendor=05e3, idProduct=0612, bcdDevice=46.12
+[    1.194178] usb 2-1: New USB device strings: Mfr=1, Product=2, SerialNumber=0
+[    1.194184] usb 2-1: Product: USB3.0 Hub
+[    1.194190] usb 2-1: Manufacturer: GenesysLogic
+[    1.247350] usb 4-1: Device not responding to setup address.
+[    1.455268] usb 4-1: device not accepting address 2, error -71
+[    1.484261] usb 1-1.3: new full-speed USB device number 3 using xhci_aeolia
+[    1.568363] usb 1-1.3: New USB device found, idVendor=046d, idProduct=c52b, bcdDevice=12.03
+[    1.568454] usb 1-1.3: New USB device strings: Mfr=1, Product=2, SerialNumber=0
+[    1.568527] usb 1-1.3: Product: USB Receiver
+[    1.568572] usb 1-1.3: Manufacturer: Logitech
+[    1.631041] usb 4-1: new SuperSpeed Gen 1 USB device number 3 using xhci_aeolia
+[    1.643214] usb 4-1: LPM exit latency is zeroed, disabling LPM.
+[    1.643762] usb 4-1: New USB device found, idVendor=054c, idProduct=084e, bcdDevice= 0.01
+[    1.643845] usb 4-1: New USB device strings: Mfr=1, Product=2, SerialNumber=3
+[    1.643916] usb 4-1: Product: USB-SATA Bridge
+[    1.643962] usb 4-1: Manufacturer: SCEI
+[    1.644013] usb 4-1: SerialNumber: 0000000000000001
+[    1.644396] usb 4-1: USB controller 0000:00:14.7 does not support streams, which are required by the UAS driver.
+[    1.644497] usb 4-1: Please try an other USB controller if you wish to use UAS.
+[    1.644593] usb 4-1: USB controller 0000:00:14.7 does not support streams, which are required by the UAS driver.
+[    1.644692] usb 4-1: Please try an other USB controller if you wish to use UAS.
+[    1.647599] usb-storage 4-1:1.0: USB Mass Storage device detected
+[    1.650813] scsi host1: usb-storage 4-1:1.0
+[    1.696284] logitech-djreceiver 0003:046D:C52B.0003: hiddev96,hidraw0: USB HID v1.11 Device [Logitech USB Receiver] on usb-0000:00:14.7-1.3/input2
+[    1.816420] input: Logitech M720 Triathlon as /devices/pci0000:00/0000:00:14.7/usb1/1-1/1-1.3/1-1.3:1.2/0003:046D:C52B.0003/0003:046D:405E.0004/input/input3
+[    1.820051] logitech-hidpp-device 0003:046D:405E.0004: input,hidraw1: USB HID v1.11 Keyboard [Logitech M720 Triathlon] on usb-0000:00:14.7-1.3/input2:1
+[    1.830366] input: Logitech K850 as /devices/pci0000:00/0000:00:14.7/usb1/1-1/1-1.3/1-1.3:1.2/0003:046D:C52B.0003/0003:046D:4062.0005/input/input4
+[    1.834021] logitech-hidpp-device 0003:046D:4062.0005: input,hidraw2: USB HID v1.11 Keyboard [Logitech K850] on usb-0000:00:14.7-1.3/input2:2
+[    1.844367] input: Logitech K400 as /devices/pci0000:00/0000:00:14.7/usb1/1-1/1-1.3/1-1.3:1.2/0003:046D:C52B.0003/0003:046D:400E.0006/input/input5
+[    1.848228] logitech-hidpp-device 0003:046D:400E.0006: input,hidraw3: USB HID v1.11 Keyboard [Logitech K400] on usb-0000:00:14.7-1.3/input2:4
+[   11.369386] usb 4-1: USB disconnect, device number 3
+[   30.525135] usb 4-1: new SuperSpeed Gen 1 USB device number 4 using xhci_aeolia
+[   30.537312] usb 4-1: LPM exit latency is zeroed, disabling LPM.
+[   30.537804] usb 4-1: New USB device found, idVendor=054c, idProduct=084e, bcdDevice= 0.01
+[   30.537807] usb 4-1: New USB device strings: Mfr=1, Product=2, SerialNumber=3
+[   30.537810] usb 4-1: Product: USB-SATA Bridge
+[   30.537813] usb 4-1: Manufacturer: SCEI
+[   30.537815] usb 4-1: SerialNumber: 0000000000000001
+[   30.538288] usb 4-1: USB controller 0000:00:14.7 does not support streams, which are required by the UAS driver.
+[   30.538291] usb 4-1: Please try an other USB controller if you wish to use UAS.
+[   30.538318] usb 4-1: USB controller 0000:00:14.7 does not support streams, which are required by the UAS driver.
+[   30.538320] usb 4-1: Please try an other USB controller if you wish to use UAS.
+[   30.538323] usb-storage 4-1:1.0: USB Mass Storage device detected
+[   30.538598] scsi host1: usb-storage 4-1:1.0
