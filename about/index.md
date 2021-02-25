@@ -39,9 +39,9 @@ Exploit Source [Link](https://gbatemp.net/threads/release-leeful-exploit-host-me
 - If you have a freeze or nothing that happens on the screen trying again some Models have random crashes ...............
 - other [Issues](https://github.com/ps4gentoo/ps4gentoo.github.io/issues) ?? tell me pla
 
-## INFOOO}}
+## INFO
 
-go under Systemsettings / Display and Monitor / Compositor and change the setting from 
+Go under Systemsettings / Display and Monitor / Compositor and change the setting from 
 VSYNC from Never to Automatic!
 
 
