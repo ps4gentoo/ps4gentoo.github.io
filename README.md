@@ -3,10 +3,10 @@
 🎥small video about gentoo [Link](https://mega.nz/#!VRUC1QCJ!98DfDKPPToQzAPEzLDwbWUE2d9xmLmWs6XnfH_iFbaM)🎥
 
 ## ✏️  Intro:
-If Your System Firmware is 5.05, you already know that you have the luck to use a Kernel Exploit which gives you the ability to run a Linux Distribution. 
+If Your System Firmware is <9.00, you already know that you have the luck to use a Kernel Exploit which gives you the ability to run a Linux Distribution. 
 The principle is the same as Fedora for firmware 1.76, you need to copy the image file to a USB stick or hard drive. You can use the tools "RUFUS" (GUI) in Windows, Etcher for MacOSx or DD under Linux, After installation, you can enlarge the Linux partition with Gparted in Gentoo, for example if you have installed it on an SSD or HDD on the USB 3.0 port.
 
-My Models CUH-1006A and CUH-7016B
+My Models CUH-1006A & CUH-7016B
 
 
 greez mircoho 🇨🇭
@@ -15,7 +15,7 @@ have fun ;)
 ## 💾 Prerequisites
 - A dedicated 12GB+ Usb Stick better a HDD / SSD for more Speed
 
-- PS4Gentoo image: (Mirror 1) [Mega-Link](https://mega.nz/#!NUFjVIqY!qHKN1yJvi-cLZMClVpJ55kuIEc6TByovoiFDkiZXlp4) || (Mirror 2) [G-Drive](https://drive.google.com/uc?id=1o5zYErfHAeZnOR1beeN4syeuKW77VDjA&export=download) (Update: 17.01.2020)
+- PS4Gentoo image: (Mirror 1) [G-Drive](https://drive.google.com/uc?id=1o5zYErfHAeZnOR1beeN4syeuKW77VDjA&export=download) (Update: 17.01.2020)
  - Rufus for Windows: [Download](https://github.com/pbatard/rufus/releases/download/v3.8/rufus-3.8.exe)
  - Etcher for Mac OSX: [Link](https://www.balena.io/etcher/)
 
@@ -73,9 +73,11 @@ Partition:2 ext4 (ps4gentoo)
 - Username: ps4
 - Password: ps4
 
+
 - Username: root
 - Password: ps4
- change the password!! 
+
+Attention: CHANGE THE PASSWORD!!!
 
 -PS4 HDD Mount
 ```mkdir /mnt/ps4hdd ```
@@ -109,9 +111,9 @@ CUH10XX & CUH11XX
 
 CUH12XX & CUH2XXX
 - Ethernet : works
-- Wi-Fi : works
-- Bluetooth : works
-- Internal HDD: works (only Beikal) 
+- Wi-Fi : works ?
+- Bluetooth : works ?
+- Internal HDD: works
 - Audio : works
 - GPU : Works but Blackscreen problem with some Monitors / TVs 
 - GPU acceleration : works (via mesa), with Vulkan 
@@ -124,7 +126,7 @@ CUH70XX  PS4 Pro
 - Ethernet : works
 - Wi-Fi : works 
 - Bluetooth : works
-- Internal HDD: WIP 
+- Internal HDD: works 
 - Audio : works
 - GPU : works but Blackscreen problem with some Monitors / TVs
 - GPU acceleration : works (via mesa), with Vulkan
@@ -182,5 +184,5 @@ Linux Video Driver for gentoo: [Link](https://github.com/ps4gentoo/ps4-overlay) 
 >>>>>>>>>>Last Steps<<<<<<<<<
 [VIDEO](https://mega.nz/#!EdNRwKKR!HclUbtz11KUpOlTe4DYZuQZPgJj1uXBwclpx89W3m4c)
 
-![Image](https://github.com/ps4gentoo/ps4gentoo.github.io/blob/master/about/gentoo1.png?raw=true)
-![Image](https://github.com/ps4gentoo/ps4gentoo.github.io/blob/master/about/gentoo4.png?raw=true)
+![Image](https://github.com/ps4gentoo/ps4gentoo.github.io/blob/master/about/img/gentoo1.png?raw=true)
+![Image](https://github.com/ps4gentoo/ps4gentoo.github.io/blob/master/about/img/gentoo4.png?raw=true)
