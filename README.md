@@ -81,7 +81,9 @@ Attention: CHANGE THE PASSWORD!!!
 
 -PS4 HDD Mount
 ```mkdir /mnt/ps4hdd ```
+
 ```cryptsetup -d /ps4hdd.bin --cipher=aes-xts-plain64 -s 256 --offset=0 create enc /dev/sda27```
+
 ```mount -rw -t ufs -o ufstype=ufs2 /dev/mapper/enc /mnt/ps4hdd```
 
 -change portage mirror in /etc/portage/make.conf with root 
@@ -181,8 +183,6 @@ Linux Video Driver for gentoo: [Link](https://github.com/ps4gentoo/ps4-overlay) 
 - qwertyoruiopz, flatz, Specter, xVortex, Stooged, OpenOrbis, 5u770n, KiiWii, LightningMods, RetroGamer74, CelesteBlue, AlAzif, c0d3m4st4, EdiTzZ, Zecoxao, Zer0xFF, eeply, valentino, rancido, astromatik, fabien, cedsaill, shim and  Team in telegram group 
 
 
->>>>>>>>>>Last Steps<<<<<<<<<
 [VIDEO](https://mega.nz/#!EdNRwKKR!HclUbtz11KUpOlTe4DYZuQZPgJj1uXBwclpx89W3m4c)
 
 ![Image](https://github.com/ps4gentoo/ps4gentoo.github.io/blob/master/about/img/gentoo1.png?raw=true)
-![Image](https://github.com/ps4gentoo/ps4gentoo.github.io/blob/master/about/img/gentoo4.png?raw=true)
