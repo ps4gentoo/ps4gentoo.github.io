@@ -16,10 +16,10 @@ have fun ;)
 - A dedicated 12GB+ Usb Stick better a HDD / SSD for more Speed
 
 - PS4Gentoo image: (Mirror 1) [G-Drive](https://drive.google.com/uc?id=1o5zYErfHAeZnOR1beeN4syeuKW77VDjA&export=download) (Update: 17.01.2020)
- - Rufus for Windows: [Download](https://github.com/pbatard/rufus/releases/download/v3.8/rufus-3.8.exe)
+ - Rufus for Windows: [Download](https://github.com/pbatard/rufus/releases/download/v4.5/rufus-4.5.exe)
  - Etcher for Mac OSX: [Link](https://www.balena.io/etcher/)
 
-- PS4 Exploit Host [PS4-GentooHost](https://ps4gentoo.github.io)
+- PS4 Exploit Host [PS4-GentooHost](https://ps4gentoo.github.io) (only for FW 5.05 atm for other Firmware use [es7in1.site](https://es7in1.site/)
 Exploit Source [Link](https://gbatemp.net/threads/release-leeful-exploit-host-menu-for-self-host-and-esp-devices.534441/) thanks to @ [Leeful](https://gbatemp.net/members/leeful.371378/) for this beautiful Design!
 
 ## 💻 How to under Windows
