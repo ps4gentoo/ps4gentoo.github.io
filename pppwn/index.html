@@ -123,8 +123,6 @@ function LoadpayloadGoldHEN(PLfile)
 	   req.open("POST", "http://"+localStorage.ipaddress+":9090/status");
 	   req.send();
 	   req.onerror = function(){
-		   alert("Cannot Load Payload Because The BinLoader Server Is Not Running");//<<If server is not running, alert message.
-		   return;
 	   };
 		req.onload = function(){
 			var responseJson = JSON.parse(req.responseText);
