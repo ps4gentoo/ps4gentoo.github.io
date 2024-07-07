@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Page1</title>
+<style>
+body{background-color:transparent;color:white;font-size:20px;text-align:center;margin:0;}
+button{width:420px;margin:5px 3px 5px 3px;padding:0px;border:2px solid #839ACA;text-align:left;color:white;outline:none;background:linear-gradient(180deg,rgba(74,91,134,1)0%,rgba(14,34,87,1)35%);}
+button:hover{cursor:pointer;background:linear-gradient(180deg,rgba(74,91,134,1)0%,rgba(4,9,23,1)35%);}
+.butIMG{display:inline-block;margin:-0px;border-right:3px solid #839ACA;outline:none;}
+.butIMG img{width:70px;height:70px;padding:5px 5px 2px 5px;}
+.butTXT{float:right;text-align:center;width:330px;font-size:28px;margin:22px 0 0 0;}
+.multiTXT{width:284px;height:80px;line-height:80px;text-align:center;font-size:28px;margin:0;outline:none;float:right;cursor:pointer;}
+.multiBUTTON{background:transparent;width:35px;height:78px;border:1px solid DimGray;line-height:78px;text-align:center;font-size:12px;color:white;margin:0;outline:none;float:right;}
+.multiBUTTON:hover{background:transparent;color:red;}
+.multiOPTIONS{width:1px;height:1px;background:transparent;color:white;outline:none;border:0;font-size:28px;display:hidden;}
+</style>
+</head>
+<body>
+
+<br><br><br><br><br><br><br><br><br><br><br>
+
+<button>
+<div onclick="load_goldhen()" onmouseover="GHover2();" onmouseout="top.defaultTXT()" class=butIMG><img src="img/hen.png"></div>
+<div onclick="openGHverSelection2()" class=multiBUTTON tabindex=1 onmouseover="top.msgs.innerHTML='Select A GoldHEN Version To Use';" onmouseout="top.defaultTXT()">▼</div>
+<div onclick="load_goldhen()" onmouseover="GHover2()" onmouseout="top.defaultTXT()" class=multiTXT tabindex=0 >GoldHEN <font color="green"><span id=GHnum2></span></font></div>
+</button>
+
+<button>
+<div onclick="load_linux()" onmouseover="GHover();" onmouseout="top.defaultTXT()" class=butIMG><img src="img/linux.png"></div>
+<div onclick="openGHverSelection()" class=multiBUTTON tabindex=1 onmouseover="top.msgs.innerHTML='Select A Linux Version To Use';" onmouseout="top.defaultTXT()">▼</div>
+<div onclick="load_linux()" onmouseover="GHover()" onmouseout="top.defaultTXT()" class=multiTXT tabindex=0 >Linux <font color="green"><span id=GHnum></span></font></div>
+</button>
+
+<button>
+<div onclick="load_fanloads()" onmouseover="GHover5();" onmouseout="top.defaultTXT()" class=butIMG><img src="img/fan.png"></div>
+<div onclick="openGHverSelection5()" class=multiBUTTON tabindex=1 onmouseover="top.msgs.innerHTML='Select A Temperatur To Use';" onmouseout="top.defaultTXT()">▼</div>
+<div onclick="load_fanloads()" onmouseover="GHover5()" onmouseout="top.defaultTXT()" class=multiTXT tabindex=0 >Temperatur <font color="green"><span id=GHnum5></span></font>°</div>
+</button>
+
+<button onclick="load_binloader()" onmouseover="top.msgs.innerHTML='BinLoader (Port 9021)'" onmouseout="top.defaultTXT()">
+<div class=butIMG><img src="img/binloader2.png"></div><div class=butTXT>BinLoader</div>
+</button>
+
+<button onclick="load_mira()" onmouseover="top.msgs.innerHTML='Mira (KLog Port 9998)'" onmouseout="top.defaultTXT()">
+<div class=butIMG><img src="img/mira.png"></div><div class=butTXT>Mira</div>
+</button>
+
+<button onclick="load_ftp()" onmouseover="top.msgs.innerHTML='FTP Server (Port 1337)'" onmouseout="top.defaultTXT()">
+<div class=butIMG><img src="img/ftp.png"></div><div class=butTXT>FTP</div>
+</button>
+
+<button>
+<div onclick="load_gamemods()" onmouseover="GHover4();" onmouseout="top.defaultTXT()" class=butIMG><img src="img/mods.png"></div>
+<div onclick="openGHverSelection4()" class=multiBUTTON tabindex=1 onmouseover="top.msgs.innerHTML='Select A Game Mod To Use';" onmouseout="top.defaultTXT()">▼</div>
+<div onclick="load_gamemods()" onmouseover="GHover4()" onmouseout="top.defaultTXT()" class=multiTXT tabindex=0 ><span id=GHnum4></span></div>
+</button>
+
+<button>
+<div onclick="load_payloads()" onmouseover="GHover3();" onmouseout="top.defaultTXT()" class=butIMG><img src="img/menu.png"></div>
+<div onclick="openGHverSelection3()" class=multiBUTTON tabindex=1 onmouseover="top.msgs.innerHTML='Select A Payload To Use';" onmouseout="top.defaultTXT()">▼</div>
+<div onclick="load_payloads()" onmouseover="GHover3()" onmouseout="top.defaultTXT()" class=multiTXT tabindex=0 ><span id=GHnum3></span></div>
+</button>
+<br>
+
+
+<select class="multiOPTIONS" id="multiGH" disabled="true" onChange="updateGHverSelection()">
+<option value="1GB_Phat">PS4 Phat 1gb vram</option>
+<option value="2GB_Phat">PS4 Phat 2gb vram</option>
+<option value="3GB_Phat">PS4 Phat 3gb vram</option>
+<option value="4GB_Phat">PS4 Phat 4gb vram</option>
+<option value="1GB_Pro">PS4 Pro 1gb vram</option>
+<option value="2GB_Pro">PS4 Pro 2gb vram</option>
+<option value="3GB_Pro">PS4 Pro 3gb vram</option>
+<option value="4GB_Pro">PS4 Pro 4gb vram</option>
+<option value="test">Test Payload</option>
+</select>
+
+<select class="multiOPTIONS" id="multiGH2" disabled="true" onChange="updateGHverSelection2()">
+<option value="v2.4b17.3">v2.4b17.3 - 12 May 2024 *Latest Beta*</option>
+<option value="v2.3">v2.3 - 24 Dec 2022 *Latest stable*</option>
+<option value="v2.2.5b7">v2.2.5b7 - 27 Oct 2023</option>
+<option value="v2.2.5b2">v2.2.5b2 - 30 Sept 2022</option>
+<option value="v2.2.4">v2.2.4 - 07 Sept 2022</option>
+<option value="v2.2.3">v2.2.3 - 06 Sept 2022</option>
+<option value="v2.3b2">v2.3b2 - 04 Jul 2022</option>
+<option value="v2.2.2">v2.2.2 - 24 Mar 2022</option>
+<option value="v2.2.1">v2.2.1 - 22 Mar 2022</option>
+<option value="v2.2">v2.2 - 10 Mar 2022</option>
+<option value="v2.1.2">v2.1.2 - 18 Feb 2022</option>
+<option value="v2.1.1">v2.1.1 - 10 Feb 2022</option>
+<option value="v2.1">v2.1 - 02 Feb 2022</option>
+<option value="v2.0b2">v2.0b2 - 20 Dec 2021</option>
+<option value="v2.0b">v2.0b - 23 Nov 2021</option>
+<option value="v1.1">v1.1 - 09 Apr 2021</option>
+<option value="v1.0">v1.0 - 21 Mar 2021</option>
+</select>
+
+<select class="multiOPTIONS" id="multiGH3" disabled="true" onChange="updateGHverSelection3()">
+<option value="Disable_Updates">Disable Updates</option>
+<option value="PS4-Debug">PS4 Debug</option>
+<option value="AppDumper">App Dumper</option>
+<option value="App2usb">App2usb</option>
+<option value="Enable_Browser">Enable Browser</option>
+<option value="Historyblocker">Historyblocker in Browser</option>
+<option value="Kerneldumper">Kerneldumper</option>
+<option value="Moduledumper">Moduledumper</option>
+<option value="Datenbank_Backup">Datenbank Backup</option>
+<option value="Datenbank_Restore">Datenbank Restore</option>
+<option value="Permanent_UART">Permanent UART</option>
+<option value="Enable_Updates">Enable Updates</option>
+</select>
+
+<select class="multiOPTIONS" id="multiGH4" disabled="true" onChange="updateGHverSelection4()">
+<option value="GTA_Lamance132">Lamance GTA v1.32r</option>
+<option value="GTA_ArabicGuy100">ArabicGuy GTA v1.00</option>
+<option value="GTA_ArabicGuy127">ArabicGuy GTA v1.27</option>
+<option value="GTA_ArabicGuy132">ArabicGuy GTA v1.32</option>
+</select>
+
+<select class="multiOPTIONS" id="multiGH5" disabled="true" onChange="updateGHverSelection5()">
+<option value="45">45° / 113°F ( let your PS4 fly..:) dustcleaner )</option>
+<option value="50">50° / 122°F</option>
+<option value="51">51° / 123°F</option>
+<option value="52">52° / 125°F</option>
+<option value="53">53° / 127°F</option>
+<option value="54">54° / 129°F</option>
+<option value="55">55° / 131°F</option>
+<option value="56">56° / 132°F</option>
+<option value="57">57° / 129°F</option>
+<option value="58">58° / 134°F</option>
+<option value="59">59° / 138°F</option>
+<option value="60">60° / 140°F</option>
+<option value="61">61° / 141°F</option>
+<option value="62">62° / 143°F</option>
+<option value="63">63° / 145°F</option>
+<option value="64">64° / 147°F</option>
+<option value="65">65° / 149°F</option>
+<option value="66">66° / 150°F</option>
+<option value="67">67° / 152°F</option>
+<option value="68">68° / 154°F</option>
+<option value="69">69° / 156°F</option>
+<option value="70">70° / 158°F</option>
+<option value="71">71° / 159°F</option>
+<option value="72">72° / 161°F</option>
+<option value="73">73° / 162°F</option>
+<option value="74">74° / 165°F</option>
+<option value="75">75° / 167°F</option>
+<option value="76">76° / 168°F</option>
+<option value="77">77° / 170°F</option>
+<option value="78">78° / 172°F</option>
+<option value="79">79° / 174°F (default)</option>
+<option value="80">80° / 176°F</option>
+<option value="81">81° / 177°F</option>
+<option value="82">82° / 179°F</option>
+</select>
+
+<script>
+
+function openGHverSelection(){
+document.getElementById('multiGH').disabled = false;
+multiGH.dispatchEvent(new MouseEvent('mousedown',{bubbles:true}));
+}
+
+function openGHverSelection2(){
+document.getElementById('multiGH2').disabled = false;
+multiGH2.dispatchEvent(new MouseEvent('mousedown',{bubbles:true}));
+}
+
+function openGHverSelection3(){
+document.getElementById('multiGH3').disabled = false;
+multiGH3.dispatchEvent(new MouseEvent('mousedown',{bubbles:true}));
+}
+
+function openGHverSelection4(){
+document.getElementById('multiGH4').disabled = false;
+multiGH4.dispatchEvent(new MouseEvent('mousedown',{bubbles:true}));
+}
+
+function openGHverSelection5(){
+document.getElementById('multiGH5').disabled = false;
+multiGH5.dispatchEvent(new MouseEvent('mousedown',{bubbles:true}));
+}
+
+function updateGHverSelection(){
+GHnum.innerHTML=multiGH.value;
+localStorage.GHVER = multiGH.value;
+document.getElementById('multiGH').disabled = true;
+}
+
+function updateGHverSelection2(){
+GHnum2.innerHTML=multiGH2.value;
+localStorage.GHVER2 = multiGH2.value;
+document.getElementById('multiGH2').disabled = true;
+}
+
+function updateGHverSelection3(){
+GHnum3.innerHTML=multiGH3.value;
+localStorage.GHVER3 = multiGH3.value;
+document.getElementById('multiGH3').disabled = true;
+}
+
+function updateGHverSelection4(){
+GHnum4.innerHTML=multiGH4.value;
+localStorage.GHVER4 = multiGH4.value;
+document.getElementById('multiGH4').disabled = true;
+}
+
+function updateGHverSelection5(){
+GHnum5.innerHTML=multiGH5.value;
+localStorage.GHVER5 = multiGH5.value;
+document.getElementById('multiGH5').disabled = true;
+}
+
+
+if (localStorage.GHVER!=null){multiGH.value = localStorage.GHVER;}
+GHnum.innerHTML=multiGH.value;
+
+if (localStorage.GHVER2!=null){multiGH2.value = localStorage.GHVER2;}
+GHnum2.innerHTML=multiGH2.value;
+
+if (localStorage.GHVER3!=null){multiGH3.value = localStorage.GHVER3;}
+GHnum3.innerHTML=multiGH3.value;
+
+if (localStorage.GHVER4!=null){multiGH4.value = localStorage.GHVER4;}
+GHnum4.innerHTML=multiGH4.value;
+
+if (localStorage.GHVER5!=null){multiGH5.value = localStorage.GHVER5;}
+GHnum5.innerHTML=multiGH5.value;
+
+function GHover(){top.msgs.innerHTML='Linux '+multiGH.value+'';}
+function GHover2(){top.msgs.innerHTML='Goldhen '+multiGH2.value+'';}
+function GHover3(){top.msgs.innerHTML='Payload '+multiGH3.value+'';}
+function GHover4(){top.msgs.innerHTML='Game Mod '+multiGH4.value+'';}
+function GHover5(){top.msgs.innerHTML='Fan Threshold '+multiGH5.value+'°';}
+
+function getScript(source,callback){var gs=document.createElement('script');gs.src=source;gs.onload=callback;gs.async=false;top.document.body.appendChild(gs);}
+function loadScript2(){getScript("exp_loaderPL.js",function(){});}
+function load_exploit(){top.msgs.innerHTML="Running Kernel Exploit Please Wait ...";getScript("exp_jailbreak.js",function(){setTimeout(top.jailbreak,500);});}
+function load_linux(){top.msgs.innerHTML="Loading Linux "+multiGH.value;top.LoadedMSG="Linux "+multiGH.value+" Loaded";top.PLfile="payloads/linux/pl_Linux"+multiGH.value+".bin";loadScript2();}
+function load_goldhen(){top.msgs.innerHTML="Loading GoldHEN "+multiGH2.value;top.LoadedMSG="Goldhen "+multiGH2.value+" Loaded";top.PLfile="payloads/goldhen/pl_GoldHEN"+multiGH2.value+".bin";loadScript2();}
+function load_binloader(){top.msgs.innerHTML="Loading Bin Loader ...";top.LoadedMSG="Send Payload To Port 9021";function loadScript(){getScript("exp_loaderBL.js",function(){});}loadScript();}
+function load_mira(){top.msgs.innerHTML="Loading Mira ...";top.LoadedMSG="Database Restore Loaded";top.PLfile="payloads/pl_mira.elf";loadScript2();}
+function load_ftp(){top.msgs.innerHTML="Loading FTP Server ...";top.LoadedMSG="FTP-Server started To Port 2121";top.PLfile="payloads/pl_ftp.bin";loadScript2();}
+function load_payloads(){top.msgs.innerHTML="Loading "+multiGH3.value;top.LoadedMSG=""+multiGH3.value+" Loaded";top.PLfile="payloads/pl_"+multiGH3.value+".bin";loadScript2();}
+function load_gamemods(){top.msgs.innerHTML="Loading Game Mod "+multiGH4.value;top.LoadedMSG=""+multiGH4.value+" Loaded";top.PLfile="gamemods/pl_"+multiGH4.value+".bin";loadScript2();}
+function load_fanloads(){top.msgs.innerHTML="Loading Threshold "+multiGH5.value;top.LoadedMSG=""+multiGH5.value+"° Threshold Loaded";top.PLfile="payloads/fan/"+multiGH5.value+".bin";loadScript2();}
+
+
+</script>
+
+</body>
+
+</html> 
