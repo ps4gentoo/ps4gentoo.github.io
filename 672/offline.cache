@@ -1,13 +1,11 @@
 CACHE MANIFEST 
 #
-
 index.html
 installCache.html
 offline.cache
 menu.html
 exp_loaderBL.js
 exp_loaderPL.js
-
 img\hen.png
 img\hen2.png
 img\linux.png
@@ -18,7 +16,6 @@ img\mira.png
 img\menu.png
 img\mods.png
 img\fan.png
-
 payloads\payloads\pl_Bin-Loader.bin
 payloads\payloads\pl_ftp.bin
 payloads\payloads\pl_Disable_Updates.bin
@@ -37,10 +34,8 @@ payloads\payloads\pl_rifrenamer.bin
 payloads\payloads\pl_todex.bin
 payloads\payloads\pl_exitidu.bin
 payloads\payloads\pl_disableaslr.bin
-
 payloads\mirahen\pl_mira.elf
 payloads\mirahen\ps4-hen-vtx.bin
-
 payloads\goldhen\pl_GoldHENv1.0.bin
 payloads\goldhen\pl_GoldHENv1.1.bin
 payloads\goldhen\pl_GoldHENv2.0b.bin
@@ -58,7 +53,6 @@ payloads\goldhen\pl_GoldHENv2.2.5b2.bin
 payloads\goldhen\pl_GoldHENv2.2.5b7.bin
 payloads\goldhen\pl_GoldHENv2.3.bin
 payloads\goldhen\pl_GoldHENv2.4b17.3.bin
-
 payloads\linux\pl_Linux1GB_Pro.bin
 payloads\linux\pl_Linux2GB_Pro.bin
 payloads\linux\pl_Linux3GB_Pro.bin
@@ -68,7 +62,6 @@ payloads\linux\pl_Linux2GB_Phat.bin
 payloads\linux\pl_Linux3GB_Phat.bin
 payloads\linux\pl_Linux4GB_Phat.bin
 payloads\linux\pl_Linuxtest.bin
-
 payloads\fan\45.bin
 payloads\fan\50.bin
 payloads\fan\51.bin
@@ -103,7 +96,6 @@ payloads\fan\79.bin
 payloads\fan\80.bin
 payloads\fan\81.bin
 payloads\fan\82.bin
-
 payloads\gamemods\GTA_ArabicGuy100.bin
 payloads\gamemods\GTA_ArabicGuy127.bin
 payloads\gamemods\GTA_ArabicGuy132.bin
