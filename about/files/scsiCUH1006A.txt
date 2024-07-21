@@ -1,0 +1,11 @@
+[    1.408335] scsi host0: ahci
+[    1.650813] scsi host1: usb-storage 4-1:1.0
+[    1.886895] scsi 0:0:0:0: CD-ROM            SONY     PS-SYSTEM   402R 0079 PQ: 0 ANSI: 5
+[    1.910252] sr 0:0:0:0: [sr0] scsi3-mmc drive: 0x/0x cd/rw xa/form2 cdda tray
+[    1.917923] sr 0:0:0:0: Attached scsi CD-ROM sr0
+[    1.918059] sr 0:0:0:0: Attached scsi generic sg0 type 5
+[    2.663528] scsi 1:0:0:0: Direct-Access     SCEI     USB-SATA Bridge  0001 PQ: 0 ANSI: 6
+[    2.663791] sd 1:0:0:0: Attached scsi generic sg1 type 0
+[   30.538598] scsi host1: usb-storage 4-1:1.0
+[   31.591579] scsi 1:0:0:0: Direct-Access     SCEI     USB-SATA Bridge  0001 PQ: 0 ANSI: 6
+[   31.591814] sd 1:0:0:0: Attached scsi generic sg1 type 0

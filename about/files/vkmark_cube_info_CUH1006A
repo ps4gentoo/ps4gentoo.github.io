@@ -1,0 +1,112 @@
+Debug: WindowSystemLoader: Looking in /usr/local/lib64/vkmark for window system plugins
+Debug: WindowSystemLoader: Loading options from /usr/local/lib64/vkmark/xcb.so... ok
+Debug: WindowSystemLoader: Loading options from /usr/local/lib64/vkmark/wayland.so... ok
+Debug: WindowSystemLoader: Probing /usr/local/lib64/vkmark/xcb.so... succeeded with priority 127
+Debug: WindowSystemLoader: Probing /usr/local/lib64/vkmark/wayland.so... succeeded with priority 0
+Debug: WindowSystemLoader: Selected window system plugin /usr/local/lib64/vkmark/xcb.so (best match)
+Debug: XcbNativeSystem: Using root visual 0x21 for window
+Device info:
+    pci (domain:bus:dev.func): 0000:00:01.0
+    pci_id = 0x9920
+    family = 57
+    chip_class = 9
+    chip_external_rev = 97
+    num_compute_rings = 4
+    num_sdma_rings = 2
+    clock_crystal_freq = 27000
+    tcc_cache_line_size = 64
+    tcc_harvested = 0
+    use_display_dcc_unaligned = 0
+    use_display_dcc_with_retile_blit = 0
+Memory info:
+    pte_fragment_size = 2097152
+    gart_page_size = 4096
+    gart_size = 3072 MB
+    vram_size = 2048 MB
+    vram_vis_size = 2048 MB
+    gds_size = 64 kB
+    gds_gfx_partition_size = 0 kB
+    max_alloc_size = 2151 MB
+    min_alloc_size = 0
+    address32_hi = 0
+    has_dedicated_vram = 0
+CP info:
+    gfx_ib_pad_with_type2 = 0
+    ib_start_alignment = 256
+    me_fw_version = 16
+    me_fw_feature = 21
+    pfp_fw_version = 16
+    pfp_fw_feature = 21
+    ce_fw_version = 16
+    ce_fw_feature = 21
+Multimedia info:
+    has_hw_decode = 0
+    uvd_enc_supported = 0
+    uvd_fw_version = 0
+    vce_fw_version = 0
+    vce_harvest_config = 0
+Kernel & winsys capabilities:
+    drm = 3.33.0
+    has_userptr = 1
+    has_syncobj = 1
+    has_syncobj_wait_for_submit = 1
+    has_fence_to_handle = 1
+    has_ctx_priority = 1
+    has_local_buffers = 1
+    kernel_flushes_hdp_before_ib = 1
+    htile_cmask_support_1d_tiling = 1
+    si_TA_CS_BC_BASE_ADDR_allowed = 1
+    has_bo_metadata = 1
+    has_gpu_reset_status_query = 1
+    has_eqaa_surface_allocator = 1
+    has_format_bc1_through_bc7 = 1
+    kernel_flushes_tc_l2_after_ib = 1
+    has_indirect_compute_dispatch = 1
+    has_unaligned_shader_loads = 1
+    has_sparse_vm_mappings = 1
+    has_2d_tiling = 1
+    has_read_registers_query = 1
+    has_gds_ordered_append = 1
+    has_scheduled_fence_dependency = 1
+Shader core info:
+    max_shader_clock = 800
+    num_good_compute_units = 18
+    num_good_cu_per_sh = 9
+    num_tcc_blocks = 4
+    max_se = 2
+    max_sh_per_se = 1
+Render backend info:
+    pa_sc_tile_steering_override = 0x0
+    num_render_backends = 2
+    num_tile_pipes = 8
+    pipe_interleave_bytes = 256
+    enabled_rb_mask = 0x3
+    max_alignment = 131072
+GB_ADDR_CONFIG:
+    num_pipes = 8
+    pipe_interleave_size = 256
+    bank_interleave_size = 1
+    num_shader_engines = 2
+    shader_engine_tile_size = 32
+    num_gpus = 0 (raw)
+    multi_gpu_tile_size = 2 (raw)
+    row_size = 1024
+    num_lower_pipes = 0 (raw)
+Debug: VulkanState: Using queue family index 0 for WSI operations
+Debug: VulkanState: Using queue family index 0 for rendering
+Debug: SwapchainWindowSystem: Available surface format B8G8R8A8Srgb
+Debug: SwapchainWindowSystem: Available surface format B8G8R8A8Unorm
+Debug: SwapchainWindowSystem: Selected swapchain format B8G8R8A8Srgb
+Debug: SwapchainWindowSystem: Swapchain contains 5 images
+Info: =======================================================
+Info:     vkmark 2017.08
+Info: =======================================================
+Info:     Vendor ID:      0x1002
+Info:     Device ID:      0x9920
+Info:     Device Name:    AMD RADV LIVERPOOL (LLVM 9.0.1)
+Info:     Driver Version: 79699971
+Info: =======================================================
+Info: [cube] <default>: FPS: 9324 FrameTime: 0.107 ms
+Info: =======================================================
+Info:                                    vkmark Score: 9324
+Info: =======================================================
