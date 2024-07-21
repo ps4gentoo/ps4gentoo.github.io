@@ -19,8 +19,10 @@ have fun ;)
  - Rufus for Windows: [Download](https://github.com/pbatard/rufus/releases/download/v3.8/rufus-3.8.exe)
  - Etcher for Mac OSX: [Link](https://www.balena.io/etcher/)
 
-- PS4 Exploit Host [PS4-GentooHost](https://ps4gentoo.github.io)
-Exploit Source [Link](https://gbatemp.net/threads/release-leeful-exploit-host-menu-for-self-host-and-esp-devices.534441/) thanks to @ [Leeful](https://gbatemp.net/members/leeful.371378/) for this beautiful Design!
+- PS4 Exploit Host 
+[PS4-FW505](https://ps4gentoo.github.io/505/index.html)
+[PS4-FW672](https://ps4gentoo.github.io/505/index.html)
+[PS4-FW900-FW1100](https://ps4gentoo.github.io/pppwn/index.html)
 
 ## 💻 How to under Windows
 - Download Gentoo and Rufus
