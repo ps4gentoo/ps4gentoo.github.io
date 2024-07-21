@@ -1,16 +1,14 @@
 ## How to Install Gentoo and Turn Your PS4 into a Emulation Station
 
-🎥small video about gentoo [Link](https://mega.nz/#!VRUC1QCJ!98DfDKPPToQzAPEzLDwbWUE2d9xmLmWs6XnfH_iFbaM)🎥
-
 ## ✏️  Intro:
-If Your System Firmware is 5.05, you already know that you have the luck to use a Kernel Exploit which gives you the ability to run a Linux Distribution. 
+If Your System Firmware is under FW 11.00, you already know that you have the luck to use a Kernel Exploit which gives you the ability to run a Linux Distribution. 
 The principle is the same as Fedora for firmware 1.76, you need to copy the image file to a USB stick or hard drive. You can use the tools "RUFUS" (GUI) in Windows, Etcher for MacOSx or DD under Linux, After installation, you can enlarge the Linux partition with Gparted in Gentoo, for example if you have installed it on an SSD or HDD on the USB 3.0 port.
 
-My Models CUH-1006A and CUH-7016B
-
+My Models CUH-1006A PS4 Phat (Aeolia) and PS4 Pro CUH-7016B (Belize)
 
 greez mircoho 🇨🇭
 have fun ;)
+
 
 ## 💾 Prerequisites
 - A dedicated 12GB+ Usb Stick better a HDD / SSD for more Speed
@@ -39,7 +37,7 @@ have fun ;)
 - If you have a freeze or nothing that happens on the screen trying again some Models have random crashes ...............
 - other [Issues](https://github.com/ps4gentoo/ps4gentoo.github.io/issues) ?? tell me pla
 
-## INFOOO}}
+## INFO
 
 go under Systemsettings / Display and Monitor / Compositor and change the setting from 
 VSYNC from Never to Automatic!
@@ -77,20 +75,9 @@ Partition:2 ext4 (ps4gentoo)
 - Password: ps4
  change the password!! 
 
--PS4 HDD Mount
-```mkdir /mnt/ps4hdd ```
-```cryptsetup -d /ps4hdd.bin --cipher=aes-xts-plain64 -s 256 --offset=0 create enc /dev/sda27```
-```mount -rw -t ufs -o ufstype=ufs2 /dev/mapper/enc /mnt/ps4hdd```
-
 -change portage mirror in /etc/portage/make.conf with root 
 ```nano /etc/portage/make.conf```
 https://www.gentoo.org/downloads/mirrors
-
--VirtualManger KVM you need to run libvirtd with root before you can use
-```systemctl start libvirtd``` or ```systemctl enable libvirtd```
-
-VR User. Register the PSVR in SteamVR (after install SteamVR) command with user rights 
-``` /home/ps4/PSVR/SteamVR-OpenHMD/./register.sh ```
 
 ## 🛠 What works / what doesn't:
 ```
@@ -156,22 +143,19 @@ Geany, Gkrellm, Ark, krfb, AntimicroX, Gparted, Spectacle, Ksysguard, Kinfocente
 
 ### 🌡 Bugs  
 
-- Blackscreen problem for some Screens (Kernel)
-- USB Host Controller doesnt work 100% for PS4 Pro! (Kernel)
+- Blackscreen problem for some Screens (Kernel) - fixed with Kernel 4.19.317 Kernel
 
-### ☎️ for more Support Join us
+### ☎️ for more Support Join my Discord Channel.
 
-[Telegram](https://t.me/ps4linux4homebrews)
-  ||  [Twitter](twitter.com/mircoho)
-  
-  
+[Discord](https://discord.gg/UXjwUhGRqw)
+
 ![IMAGE](https://github.com/ps4gentoo/ps4gentoo.github.io/blob/master/about/asd.jpeg?raw=true)
 
 
 ### Gentoo-Sources
 Linux Kernel: [Link](https://github.com/ps4gentoo/ps4-linux)
 Linux Loader: [Link](https://github.com/ps4gentoo/PS4-Linux-Loader)
-Linux Video Driver for gentoo: [Link](https://github.com/ps4gentoo/ps4-overlay) (thanks marcan)
+Linux Video Driver for gentoo: [Link](https://github.com/ps4gentoo/ps4-overlay)
 
 
 ### Credits & Thanks ❤️❤️
