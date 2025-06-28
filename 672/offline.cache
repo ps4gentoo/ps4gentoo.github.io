@@ -65,6 +65,7 @@ payloads\linux\pl_Linux4GB_Phat.bin
 payloads\linux\pl_Linux256MB_Pro.bin
 payloads\linux\pl_Linux2560MB_Pro.bin
 payloads\linux\pl_Linux_ssh.bin
+payloads\linux\pl_Linuxtest.bin
 payloads\fan\45.bin
 payloads\fan\50.bin
 payloads\fan\51.bin
