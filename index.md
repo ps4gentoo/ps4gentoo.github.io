@@ -18,7 +18,7 @@ have fun ;)
  - Etcher for Mac OSX: [Link](https://www.balena.io/etcher/)
 
 - PS4 Exploit Host 
-[PS4-FW505](https://ps4gentoo.github.io/505/index.html) || [PS4-FW672](https://ps4gentoo.github.io/672/index.html) || [PS4-FW900-FW1100](https://ps4gentoo.github.io/pppwn/index.html)
+[FW505](https://ps4gentoo.github.io/505/index.html) || [FW672](https://ps4gentoo.github.io/672/index.html) || [FW900-FW1200](https://ps4gentoo.github.io/pppwn/index.html)
 
 ## 💻 How to under Windows
 - Download Gentoo and Rufus
@@ -44,24 +44,7 @@ VSYNC from Never to Automatic!
 
 
 ## Webkit Info Payloads 
-(update: 20.01.20 add linux loader for baikal)
-
-Bootmenü:
-
-Linux USB - for this payload you need a USB Stick for Boot into Rescue / Shell
-- load the initramfs.cpio.gz & bzimage (kernel) from the FAT32 USB / HDD Partition
-
-Gentoo 
-- Loads the initramfs.cpio.gz & bzImage (kernel) from the PS4 Webbrowser Cache with Kernel 5.3.7
-works for all
-
-
-psxIta (this loader is for psxita)
-- Loads the initramfs.cpio.gz & bzImage (kernel) from the PS4 Webbrowser Cache with Kernel 5.3.7 fand loads the linux from Label=psxitarch
-
-Internal Loader
-- Loads the initramfs.cpio.gz & bzImage (kernel) from the PS4 Hard Drive /data/linux/boot(bzimage,initramfs.cpio.gz) and /data/linux/ system
-Works for CUH10XX and CUH11XX
+-
 
 
 ## 📍 Info 
@@ -82,43 +65,43 @@ https://www.gentoo.org/downloads/mirrors
 ## 🛠 What works / what doesn't:
 ```
 CUH10XX & CUH11XX
-- Ethernet : works
-- Wi-Fi : works
-- Bluetooth : works
-- Internal HDD: works 
-- Audio : works
-- GPU : works
-- GPU acceleration : works (via mesa), with Vulkan
-- Power button : works
-- BD Drive : works
-- USB : works 
-- Power management / Suspend : suspend doesnt work shutdown and reboot : works
+- Ethernet : ✅
+- Wi-Fi : ✅
+- Bluetooth : ✅
+- Internal HDD: ✅ 
+- Audio : ✅
+- GPU : ✅
+- GPU acceleration : ✅ (via mesa), with Vulkan only LLVM and not ACO Shader compiler
+- Power button : ✅
+- BD Drive : ✅
+- USB : ✅ 
+- Power management / Suspend : suspend ⛔, shutdown and reboot : ✅
 
 CUH12XX & CUH2XXX
-- Ethernet : works
-- Wi-Fi : works
-- Bluetooth : works
-- Internal HDD: works (only Beikal) 
-- Audio : works
-- GPU : Works but Blackscreen problem with some Monitors / TVs 
+- Ethernet : ✅
+- Wi-Fi : ✅/⛔
+- Bluetooth : ✅/⛔
+- Internal HDD: ✅  
+- Audio : ✅
+- GPU : ✅ (via mesa), with Vulkan only LLVM and not ACO Shader compiler
 - GPU acceleration : works (via mesa), with Vulkan 
-- Power button : works
-- BD Drive : works
-- USB : works for some Model
-- Power management / Suspend : suspend doesn`t work, shutdown and reboot : works
+- Power button : ✅
+- BD Drive : ✅
+- USB : ✅
+- Power management / Suspend : suspend ⛔, shutdown and reboot : ✅
 
 CUH70XX  PS4 Pro
-- Ethernet : works
-- Wi-Fi : works 
-- Bluetooth : works
-- Internal HDD: WIP 
-- Audio : works
-- GPU : works but Blackscreen problem with some Monitors / TVs
-- GPU acceleration : works (via mesa), with Vulkan
-- Power button : works
-- USB : WIP
-- BD Drive : works
-- Power management / Suspend : suspend doesn`t work, shutdown and reboot : works
+- Ethernet : ✅
+- Wi-Fi : ✅ 
+- Bluetooth : ✅
+- Internal HDD: ✅ 
+- Audio : ✅
+- GPU : ✅ (via mesa), with Vulkan only LLVM and not ACO Shader compiler but Blackscreen problem with some Monitors / TVs
+- GPU acceleration : ✅ (via mesa), with Vulkan
+- Power button : ✅
+- USB : ✅
+- BD Drive : ✅
+- Power management / Suspend : suspend⛔ , shutdown and reboot : ✅
 ```
 
 ## 📦 Changelog
@@ -163,8 +146,6 @@ Linux Video Driver for gentoo: [Link](https://github.com/ps4gentoo/ps4-overlay)
 - qwertyoruiopz, flatz, Specter, xVortex, Stooged, OpenOrbis, 5u770n, KiiWii, LightningMods, RetroGamer74, CelesteBlue, AlAzif, c0d3m4st4, EdiTzZ, Zecoxao, Zer0xFF, eeply, valentino, rancido, astromatik, fabien, cedsaill, shim and  Team in telegram group 
 
 
->>>>>>>>>>Last Steps<<<<<<<<<
 [VIDEO](https://mega.nz/#!EdNRwKKR!HclUbtz11KUpOlTe4DYZuQZPgJj1uXBwclpx89W3m4c)
 
-![Image](https://github.com/ps4gentoo/ps4gentoo.github.io/blob/master/about/gentoo1.png?raw=true)
-![Image](https://github.com/ps4gentoo/ps4gentoo.github.io/blob/master/about/gentoo4.png?raw=true)
+![Image](https://github.com/ps4gentoo/ps4gentoo.github.io/blob/master/about/img/gentoo1.png?raw=true)
