@@ -18,7 +18,7 @@ have fun ;)
  - Etcher for Mac OSX: [Link](https://www.balena.io/etcher/)
 
 - PS4 Exploit Host 
-[PS4-FW505](https://ps4gentoo.github.io/505/index.html) || [PS4-FW672](https://ps4gentoo.github.io/672/index.html) || [PS4-FW900-FW1100](https://ps4gentoo.github.io/pppwn/index.html)
+[FW505](https://ps4gentoo.github.io/505/index.html) || [FW672](https://ps4gentoo.github.io/672/index.html) || [FW900-FW1200](https://ps4gentoo.github.io/pppwn/index.html)
 
 ## 💻 How to under Windows
 - Download Gentoo and Rufus
