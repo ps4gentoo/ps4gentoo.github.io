@@ -79,8 +79,8 @@ CUH10XX & CUH11XX
 
 CUH12XX & CUH2XXX
 - Ethernet : ✅
-- Wi-Fi : ✅/
-- Bluetooth : ✅/
+- Wi-Fi : ✅/⛔
+- Bluetooth : ✅/⛔
 - Internal HDD: ✅  
 - Audio : ✅
 - GPU : ✅ (via mesa), with Vulkan only LLVM and not ACO Shader compiler
