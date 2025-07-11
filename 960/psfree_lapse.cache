@@ -34,6 +34,10 @@ payloads\dumpers\dumperM.bin
 payloads\dumpers\dumperU.bin
 payloads\hen\goldhen.bin
 payloads\hen\ps4-hen-900-vtx.bin
+payloads\linux\payload-960-2gb.bin
+payloads\linux\payload-960-2gb-pro.bin
+payloads\linux\payload-960-2gb-baikal.bin
+payloads\linux\payload-960-2gb-pro-baikal.bin
 rop\ps4\900.mjs
 
 NETWORK:
