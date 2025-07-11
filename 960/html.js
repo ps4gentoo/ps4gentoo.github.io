@@ -32,28 +32,9 @@ function goldhen() {
     callalert();
 }
 
-
-function linux1() {
-    payloadFile = './payloads/linux/payload-960-2gb.bin';
-    payloadTitle = 'Linux';
-    callalert();
-}
-
-function linux2() {
-    payloadFile = './payloads/linux/payload-960-2gb-pro.bin';
-    payloadTitle = 'Linux';
-    callalert();
-}
-
-function linux3() {
-    payloadFile = './payloads/linux/payload-960-2gb-baikal.bin';
-    payloadTitle = 'Linux';
-    callalert();
-}
-
-function linux4() {
-    payloadFile = './payloads/linux/payload-960-2gb-pro-baikal.bin';
-    payloadTitle = 'Linux';
+function vtx() {
+    payloadFile = './payloads/hen/ps4-hen-900-vtx.bin';
+    payloadTitle = 'PS4HEN v2.1.5';
     callalert();
 }
 
@@ -162,6 +143,12 @@ document.addEventListener('DOMContentLoaded', () => {
     function onCheckboxChange(isChecked) {
         if (isChecked) {
             goldhen();
+        }
+    }
+
+    function onCheckboxChange2(isChecked) {
+        if (isChecked) {
+            vtx();
         }
     }
 });

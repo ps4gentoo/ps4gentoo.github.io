@@ -548,7 +548,7 @@ function load_fw_specific(version) {
   }
 
   if (0x900 <= value) {
-    return import("../rop/ps4/950.mjs");
+    return import("../rop/ps4/900.mjs");
   }
 
   throw RangeError("Firmware not supported");

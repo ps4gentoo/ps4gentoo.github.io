@@ -38,7 +38,7 @@ import * as rop from "./module/chain.mjs";
 import * as config from "./config.mjs";
 
 // static imports for firmware configurations
-import * as fw_ps4_950 from "./lapse/ps4/950.mjs";
+import * as fw_ps4_900 from "./lapse/ps4/900.mjs";
 
 const t1 = performance.now();
 
@@ -189,7 +189,7 @@ const main_core = 7;
 const num_grooms = 0x200;
 const num_handles = 0x100;
 const num_sds = 0x100; // max is 0x100 due to max IPV6_TCLASS
-const num_alias = 100;
+const num_alias = 10;
 const num_races = 100;
 const leak_len = 16;
 const num_leaks = 5;

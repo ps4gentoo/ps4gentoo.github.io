@@ -1,12 +1,3 @@
-# PSFree
-This repo is based on the work of two other repo :
-
-### Source:
-- [PSFree from Al-Azif repo](https://github.com/Al-Azif/psfree-lapse)
-- [PSFree from mrdude2478 repo](https://github.com/mrdude2478/mrdude2478.github.io)
-
-___
+[![Typing SVG](https://readme-typing-svg.demolab.com?font=Fira+Code&weight=700&size=30&pause=1000&color=F7BE0E&width=435&lines=MrDude+Waz+Ere)](https://git.io/typing-svg)
 
 ### DO NOT Download anything from here - it's just a test page.
-
-### For personal use only.

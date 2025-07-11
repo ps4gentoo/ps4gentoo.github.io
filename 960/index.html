@@ -33,27 +33,6 @@
                 </a>
             </div>
         </div>
-          <div class="dropdown">
-            <button class="dropbtn">Linux</button>
-            <div class="dropdown-content">
-                <a href="javascript:linux1();" class="tooltip">
-                    (Aeolia / Belize PHAT)
-                    <span class="tooltiptext">Linux vram: 2GB (Aeolia / Belize PHAT)</span>
-                </a>
-                <a href="javascript:linux2();" class="tooltip">
-                     (Aeolia / Belize PRO)
-                    <span class="tooltiptext">Linux vram: 2GB (Aeolia / Belize PRO)</span>
-                </a>
-                <a href="javascript:linux3();" class="tooltip">
-                     (BAIKAL PHAT)
-                    <span class="tooltiptext">Linux vram: 2GB (BAIKAL PHAT)</span>
-                </a>
-                <a href="javascript:linux4();" class="tooltip">
-                     (BAIKAL PRO)
-                    <span class="tooltiptext">Linux vram: 2GB (BAIKAL PRO)</span>
-                </a>
-            </div>
-        </div>
         <div class="dropdown">
             <button class="dropbtn">Dumpers</button>
             <div class="dropdown-content">
@@ -96,7 +75,7 @@
 
     <div class="info" id="message">
         <div id="statusText">
-            <h2>*** Select PSFREE To Start Exploit ***</h2>
+            <h2>*** Select A Payload To Inject ***</h2>
         </div>
 
         <!-- NEW: Group image buttons + checkboxes -->
@@ -121,6 +100,27 @@
                     </label>
                 </div>
             </div>
+
+            <!-- PS4HEN payload -->
+            <div class="payload-group">
+                <div class="tooltip">
+                    <button class="imgbutton">
+                        <img src="./icons/vtx.jpg" loading="lazy" onclick="vtx()">
+                    </button>
+                    <span class="tooltiptextx">PS4HEN v2.1.5</span>
+                </div>
+                <br><br>
+                <div class="tooltip">
+                    <label class="checkbox-label">
+                        <input type="checkbox" id="myCheckbox2"
+                               style="position:static; width:auto; height:auto; overflow:visible; cursor: pointer;">
+                        Auto Inject PS4Hen
+                        <span class="tooltipcheckbox">
+                            Auto inject PS4Hen when page loads
+                        </span>
+                    </label>
+                </div>
+            </div>
         </div>
     </div>
     <!-- Popup Box -->
@@ -129,7 +129,7 @@
             <span class="close">&times;</span>
             <div class="scroll-container" id="scroll-container">
                 <h3>About</h3>
-                <p>This is a payload injector program for the PS4 using firmware 9.60</p>
+                <p>This is a payload injector program for the PS4 using firmware 9.0</p>
                 <p>The code uses the Al-Azif version of PSFree (1.5.1) and the new Lapse exploit which was created on: 14/6/25</p>
                 <br><br>
                 <p>Page design by MrDude</p>

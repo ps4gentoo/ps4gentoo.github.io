@@ -12,8 +12,9 @@ psfree.mjs
 send.mjs
 css\index.css
 icons\gold.jpg
-kpatch\950.bin
-lapse\ps4\950.mjs
+icons\vtx.jpg
+kpatch\900.bin
+lapse\ps4\900.mjs
 module\chain.mjs
 module\int64.mjs
 module\mem.mjs
@@ -32,14 +33,12 @@ payloads\dumpers\dumperGU.bin
 payloads\dumpers\dumperM.bin
 payloads\dumpers\dumperU.bin
 payloads\hen\goldhen.bin
-payloads\linux\payload-960-2gb.bin
-payloads\linux\payload-960-2gb-pro.bin
-payloads\linux\payload-960-2gb-baikal.bin
-payloads\linux\payload-960-2gb-pro-baikal.bin
-rop\ps4\950.mjs
+payloads\hen\ps4-hen-900-vtx.bin
+rop\ps4\900.mjs
 
 NETWORK:
 *
 
 SETTINGS:
 prefer-online:
+
