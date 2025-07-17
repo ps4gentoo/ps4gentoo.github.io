@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <title>PS4-Hack</title>
+    <link rel='stylesheet' href='./css/index.css'>
+    <script src="./html.js" defer></script>
+    <script src="./about.js" defer></script>
+</head>
+<body>
+    <div class="navbar">
+        <a href="javascript:showPopup();" id="aboutBtn">
+            About
+        </a>
+        <a href="javascript:bloader();" class="tooltip">
+            Binloader
+            <span class="tooltiptext">Binloader allows you to send payloads to your PS4 on port 9020</span>
+        </a>
+        <div class="dropdown">
+            <button class="dropbtn">Blockers</button>
+            <div class="dropdown-content">
+                <a href="javascript:historyblocker();" class="tooltip">
+                    History Blocker
+                    <span class="tooltiptext">Stops the PS4 web browser from auto loading the last visited web page</span>
+                </a>
+                <a href="javascript:disabledupdates();" class="tooltip">
+                    Disable Firmware Updates
+                    <span class="tooltiptext">Prevents auto updating firmware</span>
+                </a>
+                <a href="javascript:enableupdates();" class="tooltip">
+                    Enable Firmware Updates
+                    <span class="tooltiptext">Allows auto updates again</span>
+                </a>
+            </div>
+        </div>
+        <div class="dropdown">
+            <button class="dropbtn">Dumpers</button>
+            <div class="dropdown-content">
+                <a href="javascript:dumpG();" class="tooltip">
+                    Dump Game Only
+                    <span class="tooltiptext">Dumps your current running PS4 game to USB</span>
+                </a>
+                <a href="javascript:dumpU();" class="tooltip">
+                    Dump Game Update Only
+                    <span class="tooltiptext">Dumps your current running PS4 game update to USB</span>
+                </a>
+                <a href="javascript:dumpGU();" class="tooltip">
+                    Dump Game & Update
+                    <span class="tooltiptext">Dumps your current running PS4 game + update to USB</span>
+                </a>
+                <a href="javascript:dumpM();" class="tooltip">
+                    Dump & Merge Game + Update
+                    <span class="tooltiptext">Dumps and merge you current running PS4 game + update to USB</span>
+                </a>
+            </div>
+        </div>
+        <div class="dropdown">
+            <button class="dropbtn">Database Tools</button>
+            <div class="dropdown-content">
+                <a href="javascript:dbbackup();" class="tooltip">
+                    Dump PS4 Database
+                    <span class="tooltiptext">Dumps your current database to HDD</span>
+                </a>
+                <a href="javascript:dbrestore();" class="tooltip">
+                    Restore PS4 Database
+                    <span class="tooltiptext">Restore your current backed up database from HDD</span>
+                </a>
+            </div>
+        </div>
+        <a href="javascript:cachepage();" class="tooltip">
+            Cache Page
+            <span class="tooltiptext">Store this page and its payloads in your PS4 web browsers cache</span>
+        </a>
+    </div>
+
+    <div class="info" id="message">
+        <div id="statusText">
+            <h2>*** Select A Payload To Inject ***</h2>
+        </div>
+
+        <!-- NEW: Group image buttons + checkboxes -->
+        <div class="payload-row">
+            <!-- GoldHEN payload -->
+            <div class="payload-group">
+                <div class="tooltip">
+                    <button class="imgbutton">
+                        <img src="./icons/gold.jpg" loading="lazy" onclick="goldhen()">
+                    </button>
+                    <span class="tooltiptextx">GoldHEN v2.4b18.3</span>
+                </div>
+                <br><br>
+                <div class="tooltip">
+                    <label class="checkbox-label">
+                        <input type="checkbox" id="myCheckbox"
+                               style="position:static; width:auto; height:auto; overflow:visible; cursor: pointer;">
+                        Auto Inject GoldHen
+                        <span class="tooltipcheckbox">
+                            Auto inject GoldHen when page loads
+                        </span>
+                    </label>
+                </div>
+            </div>
+
+            <!-- PS4HEN payload -->
+            <div class="payload-group">
+                <div class="tooltip">
+                    <button class="imgbutton">
+                        <img src="./icons/vtx.jpg" loading="lazy" onclick="vtx()">
+                    </button>
+                    <span class="tooltiptextx">PS4HEN v2.1.5</span>
+                </div>
+                <br><br>
+                <div class="tooltip">
+                    <label class="checkbox-label">
+                        <input type="checkbox" id="myCheckbox2"
+                               style="position:static; width:auto; height:auto; overflow:visible; cursor: pointer;">
+                        Auto Inject PS4Hen
+                        <span class="tooltipcheckbox">
+                            Auto inject PS4Hen when page loads
+                        </span>
+                    </label>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Popup Box -->
+    <div id="popup" class="popup">
+        <div class="popup-content">
+            <span class="close">&times;</span>
+            <div class="scroll-container" id="scroll-container">
+                <h3>About</h3>
+                <p>This is a payload injector program for the PS4 using firmware 9.0</p>
+                <p>The code uses the Al-Azif version of PSFree (1.5.1) and the new Lapse exploit which was created on: 14/6/25</p>
+                <br><br>
+                <p>Page design by MrDude</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
