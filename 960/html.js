@@ -33,8 +33,44 @@ function goldhen() {
 }
 
 function vtx() {
-    payloadFile = './payloads/hen/ps4-hen-900-vtx.bin';
-    payloadTitle = 'Linux v25';
+    payloadFile = './payloads/linux/ps4-linux-pro-2gb.bin';
+    payloadTitle = 'Linux PS4 PRO';
+    callalert();
+}
+
+function linux() {
+    payloadFile = './payloads/linux/ps4-linux-2gb.bin';
+    payloadTitle = 'Linux PS4';
+    callalert();
+}
+
+function linux2() {
+    payloadFile = './payloads/linux/ps4-linux-1gb.bin';
+    payloadTitle = 'Linux PS4';
+    callalert();
+}
+
+function linux3() {
+    payloadFile = './payloads/linux/ps4-linux-3gb.bin';
+    payloadTitle = 'Linux PS4';
+    callalert();
+}
+
+function linux4() {
+    payloadFile = './payloads/linux/ps4-linux-pro-1gb.bin';
+    payloadTitle = 'Linux PS4 PRO';
+    callalert();
+}
+
+function linux5() {
+    payloadFile = './payloads/linux/ps4-linux-pro-2gb.bin';
+    payloadTitle = 'Linux PS4 PRO';
+    callalert();
+}
+
+function linux6() {
+    payloadFile = './payloads/linux/ps4-linux-pro-3gb.bin';
+    payloadTitle = 'Linux PS4 PRO';
     callalert();
 }
 

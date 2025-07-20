@@ -14,6 +14,7 @@ send.mjs
 css\index.css
 icons\gold.jpg
 icons\vtx.jpg
+icons\vtx2.jpg
 kpatch\950.bin
 lapse\ps4\950.mjs
 module\chain.mjs
@@ -35,6 +36,12 @@ payloads\dumpers\dumperM.bin
 payloads\dumpers\dumperU.bin
 payloads\hen\goldhen.bin
 payloads\hen\ps4-hen-900-vtx.bin
+payloads\linux\ps4-linux-1gb.bin
+payloads\linux\ps4-linux-2gb.bin
+payloads\linux\ps4-linux-3gb.bin
+payloads\linux\ps4-linux-pro-1gb.bin
+payloads\linux\ps4-linux-pro-2gb.bin
+payloads\linux\ps4-linux-pro-3gb.bin
 rop\ps4\950.mjs
 
 NETWORK:

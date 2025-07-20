@@ -17,6 +17,35 @@
             <span class="tooltiptext">Binloader allows you to send payloads to your PS4 on port 9020</span>
         </a>
         <div class="dropdown">
+            <button class="dropbtn">Linux</button>
+            <div class="dropdown-content">
+                <a href="javascript:linux2();" class="tooltip">
+                    Linux PS4 vram: 1GB
+                    <span class="tooltiptext">Linux PS4 vram: 1GB</span>
+                </a>
+                <a href="javascript:linux();" class="tooltip">
+                    Linux PS4 vram: 2GB
+                    <span class="tooltiptext"> Linux PS4 vram: 2GB</span>
+                </a>
+                <a href="javascript:linux3();" class="tooltip">
+                    Linux PS4 vram: 3GB
+                    <span class="tooltiptext">Linux PS4 vram: 3GB</span>
+                </a>
+                <a href="javascript:linux4();" class="tooltip">
+                    Linux PS4 PRO vram: 1GB
+                    <span class="tooltiptext"> Linux PS4 PRO vram: 1GB</span>
+                </a>
+                <a href="javascript:linux5();" class="tooltip">
+                    Linux PS4 PRO vram: 2GB
+                    <span class="tooltiptext">Linux PS4 PRO vram: 2GB</span>
+                </a>
+                <a href="javascript:linux6();" class="tooltip">
+                    Linux PS4 PRO vram: 3GB
+                    <span class="tooltiptext">Linux PS4 PRO vram: 3GB</span>
+                </a>
+            </div>
+        </div>        
+        <div class="dropdown">
             <button class="dropbtn">Blockers</button>
             <div class="dropdown-content">
                 <a href="javascript:historyblocker();" class="tooltip">
@@ -105,9 +134,29 @@
             <div class="payload-group">
                 <div class="tooltip">
                     <button class="imgbutton">
-                        <img src="./icons/vtx.jpg" loading="lazy" onclick="vtx()">
+                        <img src="./icons/vtx2.jpg" loading="lazy" onclick="linux()">
                     </button>
                     <span class="tooltiptextx">PS4 Linux</span>
+                </div>
+                <br><br>
+                <div class="tooltip">
+                    <label class="checkbox-label">
+                        <input type="checkbox" id="myCheckbox2"
+                               style="position:static; width:auto; height:auto; overflow:visible; cursor: pointer;">
+                        Auto Inject Linux
+                        <span class="tooltipcheckbox">
+                            Auto inject Linux when page loads
+                        </span>
+                    </label>
+                </div>
+            </div>
+            <!-- PS4HEN payload -->
+            <div class="payload-group">
+                <div class="tooltip">
+                    <button class="imgbutton">
+                        <img src="./icons/vtx.jpg" loading="lazy" onclick="vtx()">
+                    </button>
+                    <span class="tooltiptextx">PS4 PRO Linux</span>
                 </div>
                 <br><br>
                 <div class="tooltip">
