@@ -34,7 +34,7 @@ function goldhen() {
 
 function vtx() {
     payloadFile = './payloads/hen/ps4-hen-900-vtx.bin';
-    payloadTitle = 'PS4HEN v2.1.5';
+    payloadTitle = 'PS4 Linux 2GB';
     callalert();
 }
 
