@@ -1,6 +1,7 @@
 CACHE MANIFEST 
 # PSFree-Lapse
 
+..\index.html
 about.js
 alert.mjs
 cache.html
