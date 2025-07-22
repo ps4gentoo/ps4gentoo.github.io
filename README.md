@@ -1,7 +1,7 @@
 ## How to Install Gentoo and Turn Your PS4 into a Emulation Station
 
 ## ✏️  Intro:
-If Your System Firmware is under FW 11.00, you already know that you have the luck to use a Kernel Exploit which gives you the ability to run a Linux Distribution. 
+If Your System Firmware is under FW 12.02, you already know that you have the luck to use a Kernel Exploit which gives you the ability to run a Linux Distribution. 
 The principle is the same as Fedora for firmware 1.76, you need to copy the image file to a USB stick or hard drive. You can use the tools "RUFUS" (GUI) in Windows, Etcher for MacOSx or DD under Linux, After installation, you can enlarge the Linux partition with Gparted in Gentoo, for example if you have installed it on an SSD or HDD on the USB 3.0 port.
 
 My Models CUH-1006A PS4 Phat (Aeolia) and PS4 Pro CUH-7016B (Belize)
