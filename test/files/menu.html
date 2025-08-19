@@ -1,0 +1,548 @@
+<html manifest="../index.cache">
+<head>
+<title>PS-Phive! (FOR PS4 FW v7.00 to v9.60) v1.0 By Leeful, Ported by Sinajet</title>
+<link rel="stylesheet prefetch" href="style.css">
+<script>
+UA=navigator.userAgent.substring(navigator.userAgent.indexOf("6.72 (") + 28,navigator.userAgent.indexOf(") Apple"));
+const versionString = UA.slice(-4);
+const fwNum = parseFloat(versionString);
+if (!isNaN(fwNum) && fwNum >= 7.00 && fwNum <= 9.60) {
+    UA = versionString;
+} else {
+    UA = "XXX"
+    alert("This Is For PS4 FW 7.xx-9.xx Only!");
+}
+
+// Hide everything except console initially
+document.addEventListener('DOMContentLoaded', function() {
+    document.getElementById('PassFail').style.display = 'none';
+    document.getElementById('MenuSelection').style.display = 'none';
+    document.getElementById('MenuContainer').style.display = 'none';
+    document.getElementById('navFix1').style.display = 'none';
+    document.getElementById('Title').style.display = 'none';
+    document.getElementById('InfoBox').style.display = 'none';
+    document.getElementById('FanTemp').style.display = 'none';
+    document.getElementById('multiGH').style.display = 'none';
+    document.getElementById('autoGH').style.display = 'none';
+    document.getElementById('console-container').style.display = 'block';
+});
+
+(function() {
+    const console = document.getElementById('console');
+    if (!console) return;
+    
+    const logToScreen = function(message) {
+        console.append(message + '\n');
+        console.scrollTop = console.scrollHeight;
+    };
+    
+    const originalLog = console.log;
+    console.log = function() {
+        let message = Array.from(arguments).join(' ');
+        logToScreen(message);
+        originalLog.apply(console, arguments);
+    };
+    
+    window.alert = function(message) {
+        logToScreen(`[ALERT] ${message}`);
+    };
+})();
+
+function GHBLScheck(){
+    var req = new XMLHttpRequest();
+    req.open("GET", "http://127.0.0.1:9090/status", true);
+    req.timeout = 2000; // 2 second timeout
+    
+    req.onload = function(){
+        if(req.status === 200) {
+            sessionStorage.ghbls = "yes";
+            GHBLS.innerHTML = "GoldHEN BinLoader Server";
+            // Continue with normal flow even when GHBLS is available
+            JBpass();
+        } else {
+            sessionStorage.ghbls = "no";
+            GHBLS.innerHTML = "Webkit";
+            setTimeout(function(){
+                runJB();
+            }, 500);
+            setTimeout(function(){
+                JBpass();
+            }, 1000);
+        }
+    };
+    
+    req.onerror = function(){
+        sessionStorage.ghbls = "no";
+        GHBLS.innerHTML = "Webkit";
+        setTimeout(function(){
+            runJB();
+        }, 500);
+        setTimeout(function(){
+            JBpass();
+        }, 1000);
+    };
+    
+    req.ontimeout = function(){
+        sessionStorage.ghbls = "no";
+        GHBLS.innerHTML = "Webkit";
+        setTimeout(function(){
+            runJB();
+        }, 500);
+        setTimeout(function(){
+            JBpass();
+        }, 1000);
+    };
+    
+    req.send(); // Make sure send() is at the end
+}
+
+</script>
+</head>
+<body onload="GHBLScheck()">
+<!-- Minimized console to save memory -->
+<div id="console-container"><pre id="console"></pre></div>
+
+<div id=PassFail>Detected Firmware Version: v<span id=FWver></span><br>Exploit Stats: Pass = <span id=passCounter></span>&nbsp;&nbsp;:&nbsp;&nbsp;Fail = <span id=failCounter></span><br>Auto Load GoldHEN : <span id=aGHyn></span><br>Payload Method: <span id=GHBLS></span></div>
+
+<div id=ScrOverlay class=cacheUPDbg></div>
+<div id=Loader class=Loader></div>
+
+<div id=MenuSelection onmouseenter=SetMenuButton()>
+</div>
+
+<div id=MenuContainer class=MenuContainer onclick=LoadPL()>
+</div>
+<script src='./js/menu.js'></script>
+
+<div id=navFix1 tabindex="6"></div>
+<div id=Title class=Title></div>
+<div id=InfoBox style=display:none><div id=InfoTitle></div><div id=InfoVerAuth></div><div id=InfoDesc></div></div>
+<div id=FanTemp class=Info1></div>
+
+<select class="multiOPTIONS" id="multiGH" disabled="true" onChange="setGHver()" style="position:fixed;bottom:0px;opacity:0;">
+</select>
+<script src="./js/goldhen_versions.js"></script>
+
+<select class="multiOPTIONS" id="autoGH" disabled="true" onChange="setAutoGH()" style="position:fixed;bottom:0px;opacity:0;">
+<option value="">Select An Option Below:</option>
+<option value="ON">Auto Load GoldHEN After Kernel Exploit = "ON"</option>
+<option value="OFF">Auto Load GoldHEN After Kernel Exploit = "OFF"</option>
+</select>
+
+<script>
+const menuSelectionContainer = document.getElementById('MenuSelection');
+const MenuContainer = document.getElementById('MenuContainer');
+menuSelectionContainer.innerHTML = '';
+MenuContainer.innerHTML = '';
+const buttonsFragment = document.createDocumentFragment();
+let isFirstButton = true;
+for (const menuKey in menuData) {
+    const button = document.createElement('div');
+    button.className = isFirstButton ? 'but2' : 'but0';
+    button.innerHTML = ` ${menuKey} `; 
+    buttonsFragment.appendChild(button);
+    buttonsFragment.append('\u00A0\u00A0');
+    isFirstButton = false;
+}
+
+menuSelectionContainer.appendChild(buttonsFragment);
+
+const menusFragment = document.createDocumentFragment();
+
+for (const menuKey in menuData) {
+    const menu = menuData[menuKey];
+    const payloadListContainer = document.createElement('div');
+    payloadListContainer.id = menu.ID;
+    payloadListContainer.className = menu.class;
+    payloadListContainer.style.cssText = menu.style;
+    menu.payloads.forEach(payload => {
+        let shouldShow = (UA === "XXX") || (payload.FW && (payload.FW.includes(UA) || payload.FW.includes(UA.charAt(0) + ".xx")));
+        
+        if (shouldShow) {
+            const payloadDiv = document.createElement('div');
+            payloadDiv.setAttribute('PL-Title', payload['PL-Title']);
+            payloadDiv.setAttribute('PL-Bin', payload['PL-Bin']);
+            payloadDiv.setAttribute('PL-Ver', payload['PL-Ver']);
+            payloadDiv.setAttribute('PL-Desc', payload['PL-Desc']);
+            payloadDiv.className = 'Box Icon'; 
+            
+            payloadDiv.innerHTML = payload.Icon;
+            
+            payloadListContainer.appendChild(payloadDiv);
+        }
+    });
+    
+    menusFragment.appendChild(payloadListContainer);
+}
+
+const multiGH_select = document.getElementById('multiGH');
+
+goldhenVersions.forEach(version => {
+    let shouldShow = (UA === "XXX") || (version.fw && (version.fw.includes(UA) || version.fw.includes(UA.charAt(0) + ".xx")));
+    
+    if (shouldShow) {
+        const option = document.createElement('option');
+        option.value = version.value;
+        option.textContent = version.text;
+
+        if (version.disabled) {
+            option.disabled = true;
+        }
+        if (version.selected) {
+            option.selected = true;
+        }
+        
+        multiGH_select.appendChild(option);
+    }
+});
+
+MenuContainer.appendChild(menusFragment);
+var SS=sessionStorage;var LS=localStorage;var CC=createCookie;var RC=readCookie;
+function createCookie(name,value,days){if(days){var date=new Date();date.setTime(date.getTime()+(days*24*60*60*1000));var expires="; expires="+date.toGMTString();}else expires="";document.cookie=name+"="+value+expires;}
+function readCookie(name){var nameEQ=name+"=";var ca=document.cookie.split(';');for(var i=0;i<ca.length;i++){var c=ca[i];while(c.charAt(0)==' ') c=c.substring(1,c.length);if(c.indexOf(nameEQ)==0) return c.substring(nameEQ.length,c.length);} return null;}
+if (sessionStorage.length == 0) {
+    
+ MenuNumber=1;
+ SS.MenuNumber=MenuNumber;
+ SS.ItemNum=2;
+ SS.MenuPos= -40;
+ MenuContainer.children[MenuNumber-1].setAttribute('id','TargetMenu');
+ TargetMenu.children[SS.ItemNum-1].className="SelectedItem Icon";
+ MenuStatus=1;
+ Loaded=0;
+ SS.ThisIsFanControl=0;
+ SS.ThisIsFwSpoofer=0;
+}
+else {
+MainMenu.children[1].setAttribute('PL-Title', 'GoldHEN '+LS.GHver);
+MainMenu.children[1].setAttribute('PL-Ver', LS.GHver+' By SiSTRo');
+MainMenu.children[1].setAttribute('PL-Bin', 'pl_GoldHEN'+LS.GHver+'.bin');
+MenuNumber=SS.MenuNumber;
+MenuContainer.children[MenuNumber-1].setAttribute('id','TargetMenu');
+TargetMenu.children[SS.ItemNum-1].className="SelectedItem Icon";
+MenuStatus=1;
+Loaded=0;
+SS.ThisIsFanControl=0;
+SS.ThisIsFwSpoofer=0;
+}
+
+FWver.innerHTML=UA;
+passCounter.innerHTML=LS.passcount;
+failCounter.innerHTML=LS.failcount;
+aGHyn.innerHTML = LS.autoGH;
+
+function openAutoGH(){
+ document.getElementById('autoGH').disabled = false;
+ var evt = autoGH.ownerDocument.createEvent('MouseEvents');
+ evt.initMouseEvent('mousedown',{bubbles:true});
+ autoGH.dispatchEvent(evt);
+ document.getElementById('autoGH').disabled = true;
+}
+
+function setAutoGH(){
+ LS.autoGH = autoGH.value;
+ aGHyn.innerHTML=LS.autoGH;
+}
+
+function openGHverSelection(){
+ document.getElementById('multiGH').disabled = false;
+ var evt = multiGH.ownerDocument.createEvent('MouseEvents');
+ evt.initMouseEvent('mousedown',{bubbles:true});
+ multiGH.dispatchEvent(evt);
+ document.getElementById('multiGH').disabled = true;
+}
+
+function setGHver(){
+ LS.GHver = multiGH.value;
+ updateGHver();
+}
+
+function updateGHver(){
+ if (TargetMenu.children[SS.ItemNum-1].getAttribute('PL-Title').includes('GoldHEN')){
+  TargetMenu.children[SS.ItemNum-1].setAttribute('PL-Title', 'GoldHEN '+LS.GHver);
+  TargetMenu.children[SS.ItemNum-1].setAttribute('PL-Ver', LS.GHver+' By SiSTRo');
+  TargetMenu.children[SS.ItemNum-1].setAttribute('PL-Bin', 'pl_GoldHEN'+LS.GHver+'.bin');
+  ChangeText("GoldHEN "+multiGH.value);
+  IBT(TargetMenu.children[SS.ItemNum-1].getAttribute('PL-Title'));IBV(TargetMenu.children[SS.ItemNum-1].getAttribute('PL-Ver'));
+ }
+}
+
+function UpdateSelectMenu(){
+ var x=TargetMenu.childElementCount;for(i=0;i<x;i++){TargetMenu.children[i].className="Box Icon";}
+ TargetMenu.children[SS.ItemNum-1].className="SelectedItem2 Icon";
+ ShowMenuInfo();SS.MenuNumber=MenuNumber;
+}
+
+function UpdateMenu(){
+ setTimeout(function(){
+  if (MenuStatus==1){TargetMenu.children[SS.ItemNum-1].className="SelectedItem Icon";}
+  else {TargetMenu.children[SS.ItemNum-1].className="SelectedItem2 Icon";}
+ },0);
+
+ if (MenuStatus == 1){TargetMenu.children[SS.ItemNum-1].className = "SelectedItemAnim Icon";
+ TargetMenu.style.left=SS.MenuPos+'px';}
+
+ UpdateTitle();
+ ShowInfo();
+
+ var x = TargetMenu.childElementCount;for (i=0; i<x; i++){TargetMenu.children[i].className="Box Icon";}
+}
+
+function UpdateTitle(){
+ Title.className = "TitleAnim";
+ setTimeout(function(){ChangeText(TargetMenu.children[SS.ItemNum-1].getAttribute('PL-Title'));},100);
+ setTimeout(function(){Title.className="Title";},100);
+ setTimeout(function(){if (TargetMenu.children[SS.ItemNum-1].getAttribute('PL-Title')=='Fan Control'){ShowFanTemp();}else{}},100);
+}
+
+function HideTitle(){
+ Title.className = "NoTitle";
+}
+
+function ChangeText(text){Title.innerHTML = text;}
+function ChangeInfoBoxTitle(text){InfoTitle.innerHTML = text;}
+function ChangeInfoBoxVer(text){InfoVerAuth.innerHTML = text;}
+function ChangeInfoBoxDesc(text){InfoDesc.innerHTML = text;}
+IBT = ChangeInfoBoxTitle;IBV = ChangeInfoBoxVer;IBD = ChangeInfoBoxDesc;
+
+function allset2(){
+ ChangeText(TargetMenu.children[SS.ItemNum-1].getAttribute('PL-Title')+" Loading...");
+ setTimeout(function(){ChangeText(TargetMenu.children[SS.ItemNum-1].getAttribute('PL-Title')+" Loaded");},4000); 
+}
+
+function ShowMenuInfo(){
+ IBT(TargetMenu.children[0].getAttribute('PL-Title'));IBV(TargetMenu.children[0].getAttribute('PL-Ver'));IBD(TargetMenu.children[0].getAttribute('PL-Desc'));
+}
+
+function ShowInfo(){
+ if (Title.innerHTML=='Fan Control'){};if (Title.innerHTML=='Firmware Spoofer'){};
+ InfoBox.style.display='block';
+ IBT(TargetMenu.children[SS.ItemNum-1].getAttribute('PL-Title'));IBV(TargetMenu.children[SS.ItemNum-1].getAttribute('PL-Ver'));
+ IBD(TargetMenu.children[SS.ItemNum-1].getAttribute('PL-Desc'));
+}
+ShowInfo();
+
+function HideLoaderBox(){
+ Loaded='1'; setTimeout(function(){var x=document.querySelectorAll(".SelectedItem");var i;for(i=0;i < x.length;i++){x[i].className="InfoIcon Icon";}},1500);
+}
+
+function SelectionMenuOFF(){
+ var x=MenuSelection.childElementCount;for(i=0;i<x;i++){MenuSelection.children[i].removeAttribute("tabindex");}
+}
+
+function SelectionMenuON(){
+ SelectionMenuOFF();
+ function AllON(){var x=MenuSelection.childElementCount;for(i=0;i<x;i++){MenuSelection.children[i].setAttribute("tabindex","1");}}
+ MenuSelection.children[MenuNumber-1].setAttribute("tabindex","1");
+ setTimeout(AllON,100);
+}
+
+function SetMenuButton(){
+ var x=MenuSelection.childElementCount;for(i=0;i<x;i++){MenuSelection.children[i].className="But0";}
+ MenuSelection.children[MenuNumber-1].className="But2";
+}
+
+function SwapMenuR(){
+ SS.ItemNum=2;SS.MenuPos=-40;
+ MenuNumber=parseInt(SS.MenuNumber)+1;
+ TargetMenu.style="display:none";
+ var x=MenuContainer.childElementCount;for(i=0;i<x;i++){MenuContainer.children[i].id="other";}
+ MenuContainer.children[MenuNumber-1].setAttribute('id','TargetMenu');SetMenuButton();
+ UpdateSelectMenu();TargetMenu.style="display:block";TargetMenu.style.left="-40px";
+}
+
+function SwapMenuL(){
+ SS.ItemNum=2;SS.MenuPos=-40;
+ MenuNumber=parseInt(SS.MenuNumber)-1;
+ TargetMenu.style="display:none";
+ var x=MenuContainer.childElementCount;for(i=0;i<x;i++){MenuContainer.children[i].id="other";}
+ MenuContainer.children[MenuNumber-1].setAttribute('id','TargetMenu');SetMenuButton();
+ UpdateSelectMenu();TargetMenu.style="display:block";TargetMenu.style.left="-40px";
+}
+
+var x=MenuContainer.childElementCount;for(i=0;i<x;i++){MenuContainer.children[i].style="display:none";}
+UpdateTitle();
+SetMenuButton();
+TargetMenu.style="display:block";
+TargetMenu.children[SS.ItemNum-1].className="SelectedItem Icon";
+TargetMenu.style.left=SS.MenuPos+'px';
+
+updateGHver();
+
+top.window.onkeyup = checkKeyUp;
+window.onkeyup = checkKeyUp;
+function checkKeyUp(e){
+e=e || window.event;
+     if (e.keyCode=='117' && Loaded==0) {}
+else if (e.keyCode=='116' && Loaded==0) {}
+}
+
+top.window.onkeydown = checkKeyDown;
+window.onkeydown = checkKeyDown;
+function checkKeyDown(e){
+  try {
+    e=e || window.event;
+    var MoveMenu = 110; 
+    if (e.keyCode=='117' && Loaded==0) {
+      if (TargetMenu.children[SS.ItemNum-1].getAttribute('PL-Title').includes('GoldHEN')) {
+        openGHverSelection();
+      }
+    }
+    else if (e.keyCode=='116' && Loaded==0) {
+      if (TargetMenu.children[SS.ItemNum-1].getAttribute('PL-Title').includes('GoldHEN')) {
+        openAutoGH();
+      }
+    }
+    else if (SS.ThisIsFanControl != 0 || SS.ThisIsFwSpoofer != 0){}
+    else if (e.keyCode=='38' && MenuStatus == 1 && Loaded==0) {
+      MenuStatus=0;
+      SelectionMenuON();
+      TargetMenu.children[SS.ItemNum-1].className="SelectedItem2 Icon";
+      HideTitle();
+      UpdateSelectMenu();
+      ShowMenuInfo();
+    }
+    else if (e.keyCode=='40' && MenuStatus == 0 && Loaded==0) {
+      MenuStatus=1;
+      SelectionMenuOFF();
+      TargetMenu.children[SS.ItemNum-1].className="SelectedItem Icon";
+      UpdateTitle();
+      ShowInfo();
+    }
+    else if (e.keyCode=='37' && Loaded==0 && MenuStatus==0 && MenuNumber-1 >= 1 && MenuNumber <= MenuSelection.childElementCount){
+      SwapMenuL();
+    }
+    else if (e.keyCode=='39' && Loaded==0 && MenuStatus==0 && MenuNumber-1 >= 0 && MenuNumber < MenuSelection.childElementCount){
+      SwapMenuR();
+    }
+    else if (e.keyCode=='37' && MenuStatus==1 && SS.ItemNum-1 >= 1 && SS.ItemNum <= TargetMenu.childElementCount){
+      SS.MenuPos=parseInt(SS.MenuPos)+MoveMenu;
+      SS.ItemNum=parseInt(SS.ItemNum)-1;
+      SelectionMenuOFF();
+      UpdateMenu();
+    }
+    else if (e.keyCode=='39' && MenuStatus==1 && SS.ItemNum-1 >= 0 && SS.ItemNum < TargetMenu.childElementCount){
+      SS.MenuPos=parseInt(SS.MenuPos)-MoveMenu;
+      SS.ItemNum=parseInt(SS.ItemNum)+1;
+      SelectionMenuOFF();
+      UpdateMenu();
+    }
+  } catch (error) {
+    console.error("Error in checkKeyDown function:", error);
+  }
+}
+
+function LoadPL(){
+ if(sessionStorage.ghbls == "yes"){
+  PLfile=TargetMenu.children[SS.ItemNum-1].getAttribute('PL-Bin');
+  LoadFromGHBLS(PLfile);
+ }
+ else{
+  if (Loaded==0 && TargetMenu.children[SS.ItemNum-1].getAttribute('PL-Bin')!="INFO"){
+   Payload=TargetMenu.children[SS.ItemNum-1].getAttribute('PL-Title'); 
+   PLfile=TargetMenu.children[SS.ItemNum-1].getAttribute('PL-Bin');
+   if (Payload=='Bin Loader'){
+    top.g_exploit_api.runBinLoader();
+   }
+   else {
+    LoadedMSG=Payload+" Loaded";
+    getPL(PLfile,SS);
+   }
+  } 
+ } 
+}
+
+function LoadFromGHBLS(PLfile){
+ var req=new XMLHttpRequest();
+ req.open("GET","http://127.0.0.1:9090/status");
+ req.send();
+ req.onerror=function(){alert("Cannot Load Payload Because The BinLoader Server Is Not Running");return;};
+ req.onload=function(){
+  var responseJson=JSON.parse(req.responseText);
+  if(responseJson.status=="ready"){
+   getPayload("bins/" + PLfile,function(req){if((req.status===200||req.status===304)&&req.response){sendPayload("http://127.0.0.1:9090",req.response);}});
+  }
+  else{alert("Cannot Load Payload Because The BinLoader Server Is Busy");return;}
+ };
+ var getPayload=function(pl,onLoadEndCallback){
+  var req=new XMLHttpRequest();
+  req.open('GET',pl);
+  req.send();
+  req.responseType="arraybuffer";
+  req.onload=function(event){if(onLoadEndCallback)onLoadEndCallback(req,event);};
+ };
+ var sendPayload=function(url,data,onLoadEndCallback){
+  var req=new XMLHttpRequest();
+  req.open("POST",url,true);
+  req.send(data);req.onload=function(event){allset2();if(onLoadEndCallback)onLoadEndCallback(req,event);};
+ };
+}
+
+async function getPL(PLfile) {
+    const fullPath = 'bins/' + PLfile;
+    top.g_exploit_api.runPayload(fullPath);
+    PLdone();
+}
+
+function runJB() {
+    const consoleElement = document.getElementById('console');
+    import('./psfree/alert.mjs').then(() => {
+        // Import successful - you can add success handling here if needed
+        if (consoleElement) {
+            consoleElement.innerHTML += "<b>Exploit Loaded Successfully!</b><br><br>";
+        }
+    }).catch(e => {
+        // Import failed - handle the error case properly
+        if (consoleElement) {
+            consoleElement.innerHTML += `<b>Exploit Failed!</b><br><br>${e.stack || e.message}\n`;
+        }
+    });
+}
+
+function JBpass(){
+    setTimeout(function() {
+        // Hide console
+        document.getElementById('console-container').style.display = 'none';
+        
+        // Show everything else
+        document.getElementById('PassFail').style.display = 'block';
+        document.getElementById('MenuSelection').style.display = 'block';
+        document.getElementById('MenuContainer').style.display = 'block';
+        document.getElementById('navFix1').style.display = 'block';
+        document.getElementById('Title').style.display = 'block';
+        document.getElementById('InfoBox').style.display = 'block';
+        document.getElementById('FanTemp').style.display = 'block';
+        document.getElementById('multiGH').style.display = 'block';
+        document.getElementById('autoGH').style.display = 'block';
+                
+        setTimeout(function(){
+            localStorage.passcount= ++localStorage.passcount;
+            try {
+                if (mymenu && mymenu.contentWindow) {
+                    mymenu.contentWindow.passCounter.innerHTML=localStorage.passcount;
+                    mymenu.contentWindow.failCounter.innerHTML=localStorage.failcount;
+                }
+            } catch(e) {
+                // Ignore cross-origin errors
+            }
+        },100);
+        
+        if(localStorage.autoGH=="ON")
+            setTimeout(function(){try{if(mymenu && mymenu.contentWindow.LoadPL) mymenu.contentWindow.LoadPL();}catch(e){}},200);
+    }, 500);
+}
+
+function PLdone(){
+    if (TargetMenu.children[SS.ItemNum-1].getAttribute('PL-Title').includes('GoldHEN')){
+        ChangeText(TargetMenu.children[SS.ItemNum-1].getAttribute('PL-Title')+" Loading...");
+        setTimeout(function(){ChangeText(TargetMenu.children[SS.ItemNum-1].getAttribute('PL-Title')+" Loaded");},1500);
+        setTimeout(GHBLScheck,2000);
+    }
+    else {
+        ChangeText(TargetMenu.children[SS.ItemNum-1].getAttribute('PL-Title')+" Loading...");
+        setTimeout(function(){ChangeText(TargetMenu.children[SS.ItemNum-1].getAttribute('PL-Title')+" Loaded");},1500); 
+    }
+}
+</script>
+</body>
+</html>
