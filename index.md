@@ -1,7 +1,7 @@
 ## How to Install Gentoo and Turn Your PS4 into a Emulation Station
 
 ## ✏️  Intro:
-If Your System Firmware is under FW 11.00, you already know that you have the luck to use a Kernel Exploit which gives you the ability to run a Linux Distribution. 
+If Your System Firmware is under FW 12.02, you already know that you have the luck to use a Kernel Exploit which gives you the ability to run a Linux Distribution. 
 The principle is the same as Fedora for firmware 1.76, you need to copy the image file to a USB stick or hard drive. You can use the tools "RUFUS" (GUI) in Windows, Etcher for MacOSx or DD under Linux, After installation, you can enlarge the Linux partition with Gparted in Gentoo, for example if you have installed it on an SSD or HDD on the USB 3.0 port.
 
 My Models CUH-1006A PS4 Phat (Aeolia) and PS4 Pro CUH-7016B (Belize)
@@ -11,14 +11,15 @@ have fun ;)
 
 
 ## 💾 Prerequisites
+- PS4 Exploit Host 
+[FW505](https://ps4gentoo.github.io/505/index.html) || [FW672](https://ps4boot.github.io/672/index.html) || [FW900](https://ps4gentoo.github.io/900/index.html) || [FW960](https://ps4boot.github.io/960/index.html) || [FW900-FW1200](https://ps4boot.github.io/pppwn/index.html)
+
 - A dedicated 12GB+ Usb Stick better a HDD / SSD for more Speed
 
 - PS4Gentoo image: (Mirror 1) [Mega-Link](https://mega.nz/#!NUFjVIqY!qHKN1yJvi-cLZMClVpJ55kuIEc6TByovoiFDkiZXlp4) || (Mirror 2) [G-Drive](https://drive.google.com/uc?id=1o5zYErfHAeZnOR1beeN4syeuKW77VDjA&export=download) (Update: 17.01.2020)
  - Rufus for Windows: [Download](https://github.com/pbatard/rufus/releases/download/v3.8/rufus-3.8.exe)
  - Etcher for Mac OSX: [Link](https://www.balena.io/etcher/)
 
-- PS4 Exploit Host 
-[FW505](https://ps4gentoo.github.io/505/index.html) || [FW672](https://ps4gentoo.github.io/672/index.html) || [FW900-FW1200](https://ps4gentoo.github.io/pppwn/index.html)
 
 ## 💻 How to under Windows
 - Download Gentoo and Rufus
