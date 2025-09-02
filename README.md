@@ -11,14 +11,15 @@ have fun ;)
 
 
 ## 💾 Prerequisites
+- PS4 Exploit Host 
+[FW505](https://ps4gentoo.github.io/505/index.html) || [FW672](https://ps4boot.github.io/672/index.html) || [FW900](https://ps4gentoo.github.io/900/index.html) || [FW960](https://ps4boot.github.io/960/index.html) || [FW900-FW1200](https://ps4boot.github.io/pppwn/index.html)
+
 - A dedicated 12GB+ Usb Stick better a HDD / SSD for more Speed
 
 - PS4Gentoo image: (Mirror 1) [Mega-Link](https://mega.nz/#!NUFjVIqY!qHKN1yJvi-cLZMClVpJ55kuIEc6TByovoiFDkiZXlp4) || (Mirror 2) [G-Drive](https://drive.google.com/uc?id=1o5zYErfHAeZnOR1beeN4syeuKW77VDjA&export=download) (Update: 17.01.2020)
  - Rufus for Windows: [Download](https://github.com/pbatard/rufus/releases/download/v3.8/rufus-3.8.exe)
  - Etcher for Mac OSX: [Link](https://www.balena.io/etcher/)
 
-- PS4 Exploit Host 
-[FW505](https://ps4gentoo.github.io/505/index.html) || [FW672](https://ps4boot.github.io/672/index.html) || [FW900](https://ps4gentoo.github.io/900/index.html) || [FW960](https://ps4boot.github.io/960/index.html) || [FW900-FW1200](https://ps4boot.github.io/pppwn/index.html)
 
 ## 💻 How to under Windows
 - Download Gentoo and Rufus
