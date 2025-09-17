@@ -12,7 +12,7 @@ have fun ;)
 
 ## 💾 Prerequisites
 - PS4 Exploit Host 
-[FW505](https://ps4gentoo.github.io/505/index.html) || [FW672](https://ps4boot.github.io/672/index.html) || [FW900](https://ps4gentoo.github.io/900/index.html) || [FW960](https://ps4boot.github.io/960/index.html) || [FW900-FW1200](https://ps4boot.github.io/pppwn/index.html)
+[FW505](https://ps4gentoo.github.io/505/index.html) || [FW672](https://ps4boot.github.io/672/index.html) || [FW900](https://ps4gentoo.github.io/900/index.html) || [FW900](https://ps4boot.github.io/900/index.html) || [FW960](https://ps4boot.github.io/960/index.html) || [FW505-FW1200](http://ps4boot.free.nf/index.html)
 
 - A dedicated 12GB+ Usb Stick better a HDD / SSD for more Speed
 
